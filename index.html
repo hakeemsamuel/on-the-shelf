@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>On the Shelf · City of Experiences</title>
+<style>
+:root{--ink:#12191b;--paper:#f4eee3;--sand:#ead9bd;--amber:#f2b976;--rust:#ac512e;--sage:#a9c1b5;--line:#43504f;--muted:#b5bfba;color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:var(--ink);color:var(--paper);font:16px/1.55 'Helvetica Neue',Helvetica,Arial,sans-serif}button,input,select{font:inherit}button,a,input,select{touch-action:manipulation}button{cursor:pointer}a{color:inherit;text-underline-offset:4px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--amber);outline-offset:4px}main{max-width:1440px;margin:auto;padding:36px clamp(20px,5vw,80px)}.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700}.brand{display:flex;align-items:center;gap:14px}.brand:before{content:'';width:26px;height:3px;background:var(--amber)}header{padding:58px 0 38px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;border-bottom:1px solid var(--line)}h1,h2,h3,p{margin:0}h1{font-size:clamp(64px,8vw,112px);line-height:.96;letter-spacing:-.065em;margin:14px 0 22px}header p{max-width:500px;color:var(--muted)}.hero-art{display:flex;align-items:center;justify-content:center}.hero-art svg{width:290px;max-width:100%}.section-top{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:30px 0 20px}h2{font-size:28px;letter-spacing:-.04em;line-height:1.1}.accent{color:var(--amber)}.layout{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(300px,1fr);gap:32px;align-items:start}.search{display:grid;grid-template-columns:1fr auto;gap:10px;margin-bottom:14px}input,select{min-width:0;background:#263231;color:var(--paper);border:1px solid #677572;border-radius:0;padding:12px}input::placeholder{color:#c0c8c4}.filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px}.filters button{background:transparent;border:1px solid #586663;color:var(--paper);padding:7px 10px;font-size:12px}.filters button[aria-pressed=true]{background:var(--amber);color:var(--ink);border-color:var(--amber)}.shelf{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.product{position:relative;text-align:left;border:1px solid var(--line);background:#202b2b;color:var(--paper);padding:15px;min-height:300px;display:flex;flex-direction:column;align-items:start}.product:hover{border-color:var(--amber);background:#2a3836}.product[aria-pressed=true]{border-color:var(--amber);box-shadow:inset 0 -4px var(--amber)}.product .art,.belt .art,.entry .thumb{display:block;overflow:hidden;background:linear-gradient(#263230 0 92%,#5a4534 92%)}.product .art{width:calc(100% + 30px);margin:-15px -15px 6px;aspect-ratio:6/5;border-bottom:1px solid var(--line)}.art svg,.thumb svg{display:block;width:100%;height:100%}.entry .thumb{float:right;width:104px;aspect-ratio:6/5;margin:2px 0 10px 14px}.entry .place{clear:both}.spot{font-size:13px;color:#46534d}.spot b{color:var(--rust);font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-right:6px}.product .culture{font-size:10px;letter-spacing:.06em;color:var(--muted);margin-top:12px}.product strong{font-size:19px;line-height:1.15;letter-spacing:-.025em;margin:4px 0 10px}.product .scan{font-size:11px;color:var(--amber);margin-top:auto}.package{height:65px;width:48px;background:var(--sand);border-top:8px solid var(--rust);color:var(--ink);display:grid;place-items:center;font-size:11px;font-weight:800;letter-spacing:.1em;box-shadow:5px 3px 0 #101719}.package.jar{border-radius:7px 7px 12px 12px;border-top:9px solid var(--amber);background:var(--rust);color:var(--paper)}.package.bottle{width:30px;border-top:12px solid var(--sage);border-radius:7px 7px 3px 3px;background:#856947;color:white}.receipt{color:var(--ink);background:var(--paper);padding:26px;border-top:7px solid var(--amber);position:sticky;top:20px;color-scheme:light}.receipt .eyebrow{color:var(--rust)}.receipt h2{margin:10px 0 20px}.empty{padding:32px 0;border-top:1px dashed #9d9c8f;color:#5b625b}.entry{border-top:1px dashed #a4a597;padding:22px 0}.entry h3{font-size:25px;letter-spacing:-.04em}.entry p{font-size:14px;margin:9px 0}.place{background:var(--sand);border-left:3px solid var(--rust);padding:13px;margin:14px 0 10px}.place strong{display:block;font-size:17px}.place .eyebrow,.alternative .eyebrow{font-size:9px}.place a,.alternative a,.source{font-size:12px}.alternative{padding:10px 0;color:#46534d}.note{font-size:12px;color:#60695f}.actions{display:flex;gap:8px;border-top:1px solid #a4a597;padding-top:16px}.actions button{padding:9px 12px;background:var(--ink);color:var(--paper);border:1px solid var(--ink);font-size:12px}.actions button:last-child{background:transparent;color:var(--ink)}button:disabled{opacity:.4;cursor:default}.count{font-size:12px;color:var(--muted)}footer{border-top:1px solid var(--line);margin-top:48px;padding-top:18px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:11px}.method{margin-top:22px;color:var(--muted);font-size:12px;max-width:650px}summary{cursor:pointer;color:var(--amber)}@media(max-width:1050px){.shelf{grid-template-columns:repeat(2,minmax(0,1fr))}.layout{gap:20px}}@media(max-width:720px){header{grid-template-columns:1fr;padding-top:36px}.hero-art{display:none}.layout{grid-template-columns:1fr}.receipt{position:static}.search{grid-template-columns:1fr}.product{min-height:0}footer{flex-direction:column}}@media(prefers-reduced-motion:no-preference){.product{transition:background .15s,border-color .15s}.product .art svg{transition:transform .25s}.product:hover .art svg{transform:scale(1.05)}}@media print{.entry .thumb{-webkit-print-color-adjust:exact;print-color-adjust:exact}}@media print{@page{margin:15mm}body,main{background:white;color:black}main{padding:0}.brand,header,.catalogue,footer,.method,.section-top{display:none}.layout{display:block}.receipt{position:static;border:0;max-width:110mm;padding:0}.actions,.remove{display:none}.entry{break-inside:avoid}a{color:black}}
+.voice-panel{margin:22px 0;padding:20px;border:1px solid var(--line);background:#202b2b}.voice-panel h2{font-size:22px;margin:8px 0 14px}.voice-lines{font-size:20px;line-height:1.4;min-height:84px}.voice-lines p+p{margin-top:5px}.voice-controls{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.voice-controls button,.demo-controls button{background:var(--amber);color:var(--ink);border:1px solid var(--amber);padding:8px 12px}.voice-panel .note{color:var(--muted)}.demo-controls{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.demo-controls input{flex:1;min-width:120px}.demo-controls button{font-size:12px}@media print{.voice-panel{display:none}}
+.city-map{margin:26px 0 32px;border:1px solid var(--line);background:#202b2b}.map-heading{padding:22px 24px 0}.map-heading h2{margin:8px 0}.map-layout{display:grid;grid-template-columns:1.7fr 1fr;align-items:center;gap:24px;padding:16px 24px 24px}.map-layout svg{width:100%;height:auto}.map-detail{border-left:3px solid var(--amber);padding:0 0 0 18px}.map-detail h3{font-size:24px;letter-spacing:-.035em;margin:8px 0}.map-detail p{font-size:14px;color:var(--muted);margin-bottom:12px}.map-detail a{font-size:12px}.map-places{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.map-places button{background:transparent;color:var(--paper);border:1px solid var(--line);padding:8px 12px;text-align:left;font-size:12px}.map-places button[data-active=true]{border-color:var(--amber)}.map-places button[aria-pressed=true]{background:var(--amber);color:var(--ink)}.map-pin circle{fill:#263231;stroke:#a9c1b5;stroke-width:2}.map-pin.active circle{fill:#f2b976;stroke:#f2b976;stroke-width:4}.map-pin text{fill:var(--paper);font:12px Helvetica,Arial,sans-serif}.map-pin.active text{fill:var(--amber);font-weight:700}.map-legend{font-size:11px;color:var(--muted);padding:0 24px 20px}.map-legend span{color:var(--amber)}@media(max-width:720px){.map-layout{grid-template-columns:1fr;padding:12px}.map-heading{padding:18px 12px 0}.map-detail{margin:0 8px}.map-legend{padding:0 12px 18px}}@media print{.city-map{display:none}}
+.checkout{margin:30px 0 8px}.checkout .section-top{margin-top:0}.checkout h2{margin-top:8px}
+.checkout-stage{display:grid;grid-template-columns:minmax(0,2fr) minmax(240px,1fr);gap:12px;align-items:stretch}
+.cart-stage{position:relative;text-align:center;border:1px solid var(--line);background:linear-gradient(to top,#5a4534 0 12px,#202b2b 12px);padding:20px 20px 36px}
+.cart-stage.pulse{box-shadow:inset 0 -4px var(--amber)}
+.cart-art{position:relative;margin:6px auto 0;width:min(100%,460px)}.cart-art svg{display:block;width:100%;height:auto}
+.cart-items{position:absolute;inset:16% 22% auto 24%;display:flex;flex-wrap:wrap;justify-content:center;align-items:end;gap:2px;min-height:50px}
+.cart-pack{width:48px;aspect-ratio:6/5;display:block;transform:rotate(-4deg)}.cart-pack:nth-child(even){transform:rotate(5deg)}.cart-pack svg{display:block;width:100%;height:100%}
+.cart-more{align-self:center;font-size:11px;font-weight:700;background:var(--amber);color:var(--ink);padding:2px 6px}
+.cart-status{color:var(--muted);font-size:14px;min-height:1.6em;margin:10px 0 0}
+.checkout-controls{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:12px}
+:is(.cart-stage,.belt-head) button,.camera button,.voice-controls button,.demo-controls button{background:transparent;color:var(--paper);border:1px solid #677572;padding:9px 13px;font-size:13px}:is(.cart-stage,.belt-head) button:disabled,.voice-controls button:disabled{opacity:.4}
+:is(.cart-stage,.belt-head) button:hover,.camera button:hover,.voice-controls button:hover,.demo-controls button:hover{border-color:var(--amber)}
+:is(.cart-stage,.belt-head) button.primary,.voice-controls button:first-child,.demo-controls button[type=submit]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:700}
+.camera{border:1px solid var(--line);background:#202b2b;padding:18px;display:flex;flex-direction:column;gap:10px}
+.camera h3{font-size:19px;letter-spacing:-.025em}
+.camera-box{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--ink);border:1px solid var(--line);display:grid;place-items:center}
+.camera-box video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}
+.camera-box.ready:after{content:"";position:absolute;inset:42% 0 auto;border-top:2px dashed var(--amber);pointer-events:none}
+.camera .note{color:var(--muted);min-height:2.6em}.camera button{width:100%;margin-top:auto}
+.belt-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0 8px}
+.belt{position:relative;overflow:hidden;display:flex;justify-content:center;align-items:end;gap:clamp(4px,1.4vw,16px);padding:16px 12px 12px;background:#1a2324;border:1px solid var(--line);border-bottom:10px solid #5a4534}
+.belt:before{content:"";position:absolute;inset:auto -40px 0 -40px;height:22px;background:repeating-linear-gradient(90deg,#0000 0 38px,#43504f 38px 40px);animation:roll 7s linear infinite;pointer-events:none}
+@keyframes roll{to{transform:translateX(40px)}}.belt.paused:before{animation-play-state:paused}
+.belt button{position:relative;z-index:1;flex:1 1 0;max-width:170px;min-width:0;display:flex;flex-direction:column;padding:0;background:#202b2b;color:var(--paper);border:1px solid var(--line);opacity:.72;transition:transform .3s,opacity .3s,border-color .3s}
+.belt button .art{width:100%;aspect-ratio:6/5;border-bottom:1px solid var(--line)}
+.belt-name{font-size:12px;font-weight:700;letter-spacing:-.01em;padding:7px 8px;text-align:left}
+.belt button[aria-pressed=true]{opacity:1;border-color:var(--amber);box-shadow:inset 0 -4px var(--amber);transform:translateY(-6px)}
+@media(max-width:820px){.checkout-stage{grid-template-columns:1fr}.belt-name{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.belt:before{animation:none}.belt button{transition:none}}
+@media print{.checkout{display:none}}
+header.top{display:flex;align-items:end;justify-content:space-between;gap:24px;padding:26px 0 20px}
+header.top h1{font-size:clamp(46px,6vw,86px);margin:8px 0 0}header.top p{max-width:380px;color:var(--muted)}
+.stage{display:grid;grid-template-columns:minmax(220px,1fr) minmax(360px,2.3fr) minmax(170px,.75fr);gap:12px;align-items:stretch;margin-top:18px}.stage .camera{align-self:start}.stage .cart-stage{display:flex;flex-direction:column;justify-content:center}
+.panel{border:1px solid var(--line);background:#202b2b;padding:14px}
+.map-panel .count{font-size:12px;margin-top:6px;display:block}.map-panel svg{display:block;width:100%;height:auto;margin:10px 0}
+.map-panel .map-places{margin:0 0 12px;gap:6px}.map-panel .map-places button{padding:6px 8px;font-size:11px}
+.map-panel .map-detail{padding-left:12px}.map-panel .map-detail h3{font-size:18px;margin:6px 0}.map-panel .map-detail p{font-size:13px}
+.map-panel .map-legend{padding:10px 0 0;margin:0;font-size:11px;color:var(--muted)}.map-panel .map-legend span{color:var(--amber)}
+.map-panel .map-pin text{display:none;font-size:26px;font-weight:700}.map-panel .map-pin.focused text{display:block}
+.map-panel .map-pin.focused circle{stroke:var(--paper);stroke-width:5}
+.camera{padding:14px;gap:8px}.camera .note{font-size:12px;min-height:0}
+.cart-stage .eyebrow{margin-bottom:4px}
+.options{margin-top:36px;padding-top:4px;border-top:1px solid var(--line)}.options .section-top h2{margin:8px 0 4px}
+.say{display:flex;align-items:center;gap:10px}.say .count{text-align:right;max-width:260px}
+.say button{background:var(--amber);color:var(--ink);border:1px solid var(--amber);padding:9px 13px;font-size:13px;font-weight:700}
+.voice-panel{margin-top:32px}
+@media(max-width:980px){.stage{grid-template-columns:1fr 1fr}.cart-stage{grid-column:1/-1;grid-row:1}}
+@media(max-width:600px){header.top{flex-direction:column;align-items:start}.stage{grid-template-columns:1fr}.options .section-top{flex-direction:column;align-items:start}.say .count{text-align:left}}
+.steer-zones{position:absolute;left:12%;right:12%;top:50%;bottom:0;display:flex;pointer-events:none}
+.steer-zones span{flex:1;border-left:1px solid #f4eee340;background:#12191b40;transition:background .15s}
+.steer-zones span:first-child{border-left:0}
+.steer-zones span.next{background:#f2b97633}
+.steer-zones span.on{background:#f2b97670;box-shadow:inset 0 -3px var(--amber)}
+.steer-dot{position:absolute;top:75%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--amber);border:2px solid var(--ink);pointer-events:none}
+.steer-dot[hidden]{display:none}
+.steer-hint{position:absolute;left:6px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--paper);text-shadow:0 1px 2px #000;pointer-events:none}
+#steer-toggle[aria-pressed=true]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:700}
+.belt.steering button{transition:opacity .15s,transform .15s,border-color .15s}
+.belt-head{flex-wrap:wrap}.belt-head .count{display:block;margin-top:2px}
+.belt-jump{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;flex:1}
+.belt-head .belt-jump button{padding:5px 9px;font-size:11px}
+.belt-head .belt-jump button[aria-pressed=true]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:700}
+.belt-wrap{display:grid;grid-template-columns:52px minmax(0,1fr) 52px;gap:8px;align-items:stretch}
+.belt-nav{display:grid;place-items:center;background:#202b2b;color:var(--paper);border:1px solid var(--line);border-bottom:10px solid #5a4534;padding:0;cursor:pointer}
+.belt-nav:hover,.belt-nav:focus-visible{border-color:var(--amber);color:var(--amber)}
+.belt{gap:10px}.belt button{flex:0 0 126px;max-width:none}.belt button[hidden]{display:none}
+.steer-edge{position:absolute;top:50%;bottom:0;width:12%;display:grid;place-items:center;color:var(--paper);font-size:18px;background:#12191b66;pointer-events:none}
+.steer-edge[data-dir="-1"]{left:0}.steer-edge[data-dir="1"]{right:0}.steer-edge.next{background:#f2b97680}
+@media(max-width:600px){.belt-wrap{grid-template-columns:34px minmax(0,1fr) 34px;gap:4px}.belt{padding:12px 6px 10px;gap:8px}.belt button{flex-basis:76px}.belt-name{font-size:10px;padding:5px}.belt-head{align-items:end}.belt-jump{order:3;flex:0 0 100%;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}.belt-head .belt-jump button{flex:0 0 auto}.camera-box{max-width:280px;width:100%;margin:0 auto}}
+</style></head><body><main>
+<div class="brand eyebrow">City of Experiences / Toronto</div>
+<header class="top"><div><div class="eyebrow accent">Toronto grocery checkout</div><h1>On the Shelf.</h1></div><p>Put familiar foods in your cart. See the people and places that made them easier to find.</p></header>
+<section class="stage" aria-label="Checkout">
+<aside class="panel map-panel" aria-label="Toronto places and histories"><div class="eyebrow accent">Toronto food stories</div><p class="count" id="map-status" aria-live="polite">Add something to the cart to light up its place.</p><svg viewBox="0 0 700 410" role="img" aria-labelledby="toronto-map-title toronto-map-desc"><title id="toronto-map-title">Toronto food heritage places</title><desc id="toronto-map-desc">Schematic map showing Palmerston, Kensington Market and Queen West west of the Don River, Gerrard India Bazaar to the east, and Ava Esfahan in North York. Approximate positions, not for navigation.</desc><rect width="700" height="410" fill="#263231"/><path d="M0 337L150 345 280 330 390 349 470 325 550 315 700 286V410H0Z" fill="#3e5755"/><path d="M475 0Q440 75 463 133T452 236Q434 281 470 325" fill="none" stroke="#6b8e87" stroke-width="7"/><g stroke="#43504f" fill="none"><path d="M0 75H700M0 165H700M0 211H700M0 274H700M0 309H700M90 0V338M180 0V345M280 0V330M360 0V340M540 0V317M620 0V300"/></g><g fill="#a9b9b2" font-size="11" font-family="Helvetica,Arial,sans-serif"><text x="10" y="68">SHEPPARD</text><text x="10" y="158">BLOOR / DANFORTH</text><text x="10" y="267">QUEEN</text><text x="492" y="290">Don River</text><text x="285" y="383">LAKE ONTARIO</text><text x="652" y="28">N ↑</text></g><g id="map-pins"></g></svg><div class="map-places" id="map-places" aria-label="Explore mapped places"></div><div class="map-detail" id="map-detail" aria-live="polite"></div><p class="map-legend"><span>● Amber</span> = in your basket · Schematic positions, not for navigation.</p></aside>
+<div class="cart-stage" id="cart-stage" aria-label="Shopping cart"><div class="eyebrow accent" id="cart-count">Cart · 00 items</div><div class="cart-art"><svg viewBox="0 0 480 245" aria-hidden="true"><ellipse cx="240" cy="221" rx="146" ry="12" fill="#0b1112" opacity=".55"/><path d="M96 61H391L353 169H132Z" fill="#263231" stroke="#a9c1b5" stroke-width="3"/><path d="M111 94H391M119 127H378M158 62L179 161M224 62L231 161M291 62L286 161M357 62L337 161" fill="none" stroke="#a9c1b5" stroke-width="2" opacity=".55"/><path d="M32 39H75L126 185H352M95 61H404L365 161H122" fill="none" stroke="#f4eee3" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 39H62" stroke="#f2b976" stroke-width="9" stroke-linecap="round"/><circle cx="153" cy="205" r="14" fill="#12191b" stroke="#f4eee3" stroke-width="5"/><circle cx="331" cy="205" r="14" fill="#12191b" stroke="#f4eee3" stroke-width="5"/></svg><div class="cart-items" id="cart-items"></div></div><p id="cart-status" class="cart-status" role="status">Raise an open palm to add the highlighted item.</p><div class="checkout-controls"><button type="button" id="co-add" class="primary">Add kimchi</button><button type="button" id="co-voice" data-listen>Say an item</button><button type="button" id="co-empty" disabled>Empty cart</button></div></div>
+<aside class="panel camera" aria-label="Hand camera"><div class="eyebrow accent">Hand camera</div><div class="camera-box" id="camera-box"><span id="camera-placeholder" class="eyebrow" style="color:var(--muted)">Camera off</span><video id="webcam" playsinline muted hidden></video></div><p class="note" id="camera-status" role="status">Raise an open palm above the line to add.</p><button type="button" id="camera-toggle">Enable camera</button><button type="button" id="steer-toggle" aria-pressed="false" disabled>Steer with hand · off</button></aside>
+</section>
+<div class="belt-head"><div><div class="eyebrow" id="belt-label">On the belt now</div><span class="count" id="belt-pos"></span></div><div class="belt-jump" id="belt-jump" aria-label="Jump to a culture on the belt"></div><button type="button" id="co-pause" aria-pressed="false">Pause belt</button></div>
+<div class="belt-wrap"><button type="button" class="belt-nav" id="belt-prev" aria-label="Previous item on the belt"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="belt" id="belt" aria-label="Grocery conveyor"></div><button type="button" class="belt-nav" id="belt-next" aria-label="Next item on the belt"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+<section class="options" aria-labelledby="options-title">
+<div class="section-top"><div><div class="eyebrow accent">All options / Click or say an item</div><h2 id="options-title">Find a taste of home.</h2><span id="result-count" class="count"></span></div><div class="say"><span class="count" id="say-status" role="status"></span><button type="button" id="shelf-voice" class="primary" data-listen>Say an item</button></div></div>
+<div class="layout"><section class="catalogue" aria-label="Ingredient shelf"><div class="search"><input id="search" type="search" aria-label="Search foods, ingredients or places" placeholder="Search kimchi, jerk sauce, PAT…"><select id="type" aria-label="Filter by item type"><option value="All">All item types</option><option>Condiment</option><option>Ingredient</option><option>Food</option><option>Household</option></select></div><div class="filters" id="filters" aria-label="Filter by cultural connection"></div><div class="shelf" id="shelf"></div><p id="no-results" hidden>No matches. Try another ingredient or choose all cultural connections.</p><details class="method"><summary>How places are highlighted</summary><p>Documented community history leads where available. Other specialty stores are highlighted for their cultural focus, followed by shopping alternatives. This is an editorial order, not a claim that a shop invented an ingredient or was first to sell it. Foods often cross borders and communities. Retailer links help you check the range; they are not live inventory. Availability varies by branch.</p></details></section>
+<aside class="receipt" aria-label="Story receipt"><div class="eyebrow">On the Shelf / Story receipt</div><h2>Your basket <span id="basket-count">00</span></h2><div id="basket" aria-live="polite"></div><div class="actions"><button id="print" disabled>Print receipt</button><button id="reset" disabled>Clear basket</button></div></aside></div>
+</section>
+<section class="voice-panel" aria-label="Basket voice and counter captions"><div class="eyebrow accent">The basket speaks / Counter captions</div><h2>A familiar voice. A place to begin.</h2><div id="voice-lines" class="voice-lines" aria-live="polite" aria-atomic="true"><p>Choose an ingredient from the shelf.</p><p>I'll help you find its story.</p></div><div class="voice-controls"><button type="button" id="voice-toggle" aria-pressed="false">Turn voice on</button><button type="button" id="voice-replay">Read these lines</button><button type="button" id="voice-stop">Stop speaking</button></div><p class="note" id="voice-status">Sound is off. These same lines stay visible on the counter.</p><details><summary>Physical basket / Demo controls</summary><p class="note">Place a small speaker near the basket and select it in your computer’s sound settings. Package codes identify items; a hand crossing only triggers a checkout cue.</p><form id="cashier" class="demo-controls"><input id="package-code" aria-label="Package code" placeholder="Package code, e.g. kimchi" autocomplete="off"><button type="submit">Confirm package</button><button type="button" id="hand-cue">Demo hand enters & withdraws</button></form><p class="note" id="demo-status" role="status">Cashier mode: use an item’s code from the shelf. Hand tracking lives in the checkout above.</p></details></section>
+<footer><span class="eyebrow">City of Experiences / Belonging in practice</span><span>Choose an ingredient. Keep a place in the story.</span></footer></main><script>
+const groups={
+Korean:{shop:'PAT Central',url:'https://www.patmart.ca/',tag:'Documented community history',why:'The Lee family opened PAT in 1972. Its early Korean grocery supply chains helped bring kimchi and gochujang to Toronto households.',source:'Museum of Toronto · PAT history',sourceUrl:'https://museumoftoronto.com/digital-content/dyk_the-history-of-pat-supermarket/',alt:'H Mart',altUrl:'https://www.hmartca.com/'},
+Jamaican:{shop:"Bonnick’s West Indian Grocery",url:'https://tricnic.ca/where-to-buy',tag:'Caribbean specialty connection',why:'A West Indian grocery is a starting point for Caribbean pantry ingredients. Tricnic lists Bonnick’s as a stockist for its jerk seasoning.',source:'Tricnic · Jerk seasoning stockists',sourceUrl:'https://tricnic.ca/where-to-buy',alt:'Caribbean Island Food Market',altUrl:'https://tricnic.ca/where-to-buy'},
+'South Asian':{shop:'Iqbal Foods',url:'https://iqbalfoods.ca/',tag:'South Asian specialty connection',why:'Explore a specialist pantry for spices, flours and pulses used across South Asian kitchens. Recipes and names vary between regions and households.',source:'Iqbal Foods · Grocery catalogue',sourceUrl:'https://iqbalfoods.ca/shop',alt:'Gerrard India Bazaar · neighbourhood shops',altUrl:'https://www.heritagetoronto.org/explore/gerrard-bazaar-little-india/'},
+Mexican:{shop:"Perola’s Supermarket",url:'https://www.perolassupermarket.com/',tag:'Latin American specialty connection',why:'Perola’s describes its role introducing Latin American products to Toronto. Its range spans Mexico and many other countries across Latin America.',source:'Perola’s · Product range',sourceUrl:'https://www.perolassupermarket.com/products',alt:'Other Latin American grocers · search nearby',altUrl:'https://www.google.com/maps/search/Latin+American+grocery+Toronto/'},
+Japanese:{shop:'Sanko Trading',url:'https://toronto-sanko.com/',tag:'Japanese specialty connection',why:'Sanko focuses on Japanese food and household goods. Browse ingredients alongside the everyday objects used to prepare and serve them.',source:'Sanko · Foods & goods',sourceUrl:'https://toronto-sanko.com/',alt:'PAT · browse Japanese pantry options',altUrl:'https://www.patmart.ca/'},
+Persian:{shop:'Ava Esfahan Food Market',url:'https://en.avafood.ca/',tag:'Persian specialty connection',why:'A Persian food market connects pantry staples with the dishes and household routines they support. Many of these ingredients are shared with neighbouring food cultures.',source:'Ava · Sumac catalogue',sourceUrl:'https://en.avafood.ca/product-category/spices/sumac/',alt:'Tavazo · check relevant pantry range',altUrl:'https://www.tavazo.com/pages/our-stores'},
+Caribbean:{shop:'Little Jamaica · Eglinton West shops',url:'https://www.heritagetoronto.org/explore/little-jamaica-toronto-history/',tag:'Documented community history',why:'Caribbean groceries, bakeries and restaurants cluster along Eglinton Avenue West. Trinidadian, Guyanese and other Caribbean pantry staples are also found along Markham Road in Scarborough.',source:'Heritage Toronto · The Living History of Little Jamaica',sourceUrl:'https://www.heritagetoronto.org/explore/little-jamaica-toronto-history/',alt:'Scarborough Caribbean grocers · search nearby',altUrl:'https://www.google.com/maps/search/Caribbean+grocery+Scarborough+Toronto/'},
+Indigenous:{shop:'Native Canadian Centre of Toronto',url:'https://www.ncct.on.ca/',tag:'Indigenous community connection',why:'The centre at 16 Spadina Road is a gathering place for Toronto’s Indigenous community and hosts artisan and food markets. Buying from Indigenous harvesters and producers keeps knowledge and income with the communities who hold them.',source:'NCCT · About us',sourceUrl:'https://www.ncct.on.ca/about-us',alt:'Indigenous-owned businesses in Toronto · blogTO list',altUrl:'https://www.blogto.com/city/2021/09/indigenous-owned-businesses-toronto/'},
+Italian:{shop:'Pusateri’s Fine Foods',url:'https://www.pusateris.com/',tag:'Documented family history',why:'Salvatore and Rosaria Pusateri, who came from Sicily, opened a produce market in Corso Italia in 1963. The family grocer now also has a store on College Street in Little Italy.',source:'Retail Insider · Pusateri’s at 60',sourceUrl:'https://retail-insider.com/retail-insider/2023/03/pusateris-fine-foods-to-open-store-in-torontos-little-italy-as-the-retailer-marks-60-years-interview/',alt:'Corso Italia & Little Italy grocers · search nearby',altUrl:'https://www.google.com/maps/search/Italian+grocery+St+Clair+Avenue+West+Toronto/'},
+Greek:{shop:'Greektown · Danforth Avenue grocers',url:'https://www.google.com/maps/search/Greek+grocery+Danforth+Avenue+Toronto/',tag:'Documented community history',why:'Postwar Greek migration built a Danforth community of homes, institutions and food shops. Grocers here and across the city stock Greek cheeses, olives and herbs.',source:'York University · The Making of Greektown',sourceUrl:'https://www.yorku.ca/research/project/hhfgca/making-greektown/',alt:'Cosmos Agora · Greek market, Scarborough',altUrl:'https://www.blogto.com/grocery/cosmos-agora-toronto/'},
+Portuguese:{shop:'Nosso Talho',url:'https://nossotalho.com/',tag:'Portuguese specialty connection',why:'A Portuguese butcher and grocery on Dundas Street West since 1974, in the strip now known as Little Portugal. Its deli carries imported Portuguese goods.',source:'Nosso Talho · About us',sourceUrl:'https://nossotalho.com/pages/about-us',alt:'Salsicharia Pavão · Little Portugal',altUrl:'https://www.blogto.com/grocery/salsicharia-pavao-toronto/'}
+};
+const items=[
+['kimchi','Kimchi','Korean','Food','jar','KIM','Fermented vegetables, often napa cabbage or radish; a specific Korean food tradition with many regional and household variations.'],
+['gochujang','Gochujang','Korean','Condiment','jar','GO','Fermented chilli paste used in stews, marinades and sauces.'],
+['doenjang','Doenjang','Korean','Condiment','jar','DO','Fermented soybean paste used in soups, stews and seasoning.'],
+['gim','Gim','Korean','Food','bag','GIM','Dried seaweed, often roasted and seasoned to eat with a meal.'],
+['sujeo','Sujeo · steel spoon & chopsticks','Korean','Household','bag','SU','A Korean table set: a long-handled spoon for rice and soup, paired with flat stainless-steel chopsticks. Metal chopsticks are a distinctly Korean everyday choice.'],
+['jerk','Jerk sauce','Jamaican','Condiment','bottle','JERK','A sauce or marinade associated with Jamaican jerk cooking; recipes often combine allspice, thyme and Scotch bonnet pepper.'],
+['ackee','Ackee','Jamaican','Food','jar','ACK','A key ingredient in ackee and saltfish, strongly associated with Jamaican food culture.'],
+['callaloo','Callaloo','Jamaican','Ingredient','bag','CAL','Leafy greens used in Jamaican cooking; the name refers to different greens and dishes elsewhere in the Caribbean.'],
+['scotch','Scotch bonnet pepper','Jamaican','Ingredient','bag','HOT','A fragrant hot pepper used in Jamaican and many other Caribbean kitchens.'],
+['masoor','Masoor dal · red lentils','South Asian','Ingredient','bag','DAL','Split red lentils used in many South Asian dal preparations; lentils also belong to many other food traditions.'],
+['atta','Chapati atta','South Asian','Ingredient','bag','ATTA','Whole-wheat flour milled for flatbreads such as chapati and roti.'],
+['kasuri','Kasuri methi','South Asian','Ingredient','bag','METHI','Dried fenugreek leaves used for their distinctive aroma in a range of South Asian dishes.'],
+['tamarind','Tamarind paste','South Asian','Condiment','jar','TAM','A sour fruit paste used in chutneys, curries and drinks, with traditions across Asia, Africa and Latin America.'],
+['masa','Masa harina','Mexican','Ingredient','bag','MASA','Nixtamalized maize flour for tortillas, tamales and other preparations.'],
+['guajillo','Guajillo chillies','Mexican','Ingredient','bag','CHILE','Dried chillies used in Mexican salsas, sauces and marinades.'],
+['nopales','Nopales','Mexican','Food','jar','NOP','Edible cactus pads used in salads, stews and other Mexican dishes.'],
+['tomatillo','Salsa verde · tomatillo','Mexican','Condiment','jar','VERDE','A tangy tomatillo-based salsa, with many regional and household variations.'],
+['miso','Miso','Japanese','Condiment','jar','MISO','Fermented soybean paste with a range of grains, colours and flavours.'],
+['furikake','Furikake','Japanese','Condiment','bag','FURI','A dry seasoning mixture, often including seaweed and sesame, sprinkled over meals.'],
+['yuzu','Yuzu kosho','Japanese','Condiment','jar','YUZU','A pungent paste of citrus peel, chilli and salt associated with Japanese cooking.'],
+['chopsticks','Saibashi · cooking chopsticks','Japanese','Household','bag','TOOL','Extra-long bamboo or wooden chopsticks for turning, stirring and plating in Japanese kitchens. Everyday Japanese table chopsticks are shorter and taper to fine points.'],
+['sumac','Sumac','Persian','Ingredient','bag','SUM','A tart ground spice used in Persian cooking and many other West Asian and Mediterranean food traditions.'],
+['limoo','Limoo amani','Persian','Ingredient','bag','LIME','Dried limes that add sourness and aroma to Persian stews and neighbouring cuisines.'],
+['barberry','Zereshk · barberries','Persian','Ingredient','bag','ZER','Small tart dried berries used in Persian dishes, including zereshk polo.'],
+['rosewater','Rosewater','Persian','Ingredient','bottle','ROSE','A floral ingredient used in Persian sweets and drinks, shared with many other culinary traditions.'],
+['roti','Roti skins · dhalpuri','Caribbean','Food','bag','ROTI','Soft flatbreads for wrapping curries, central to Trinidadian and Guyanese cooking. Dhalpuri is filled with ground, seasoned split peas.'],
+['peppersauce','Pepper sauce','Caribbean','Condiment','bottle','PEP','A fiery bottled sauce made across the Caribbean from hot peppers, vinegar and aromatics; every island and household has its own style.'],
+['sorrel','Sorrel','Caribbean','Ingredient','bag','SOR','Dried hibiscus (roselle) calyces steeped with ginger and spice for a deep red drink, especially at Christmas.'],
+['cassareep','Cassareep','Caribbean','Condiment','bottle','CAS','A thick, dark syrup made from cassava juice and essential to Guyanese pepperpot. Its use comes from Indigenous peoples of Guyana.'],
+['manoomin','Manoomin · wild rice','Indigenous','Food','bag','RICE','The seed of an aquatic grass, hand-harvested by canoe in lakes and rivers, including in Ontario. Manoomin is a sacred food at the centre of Anishinaabe culture.'],
+['maple','Maple syrup','Indigenous','Condiment','bottle','MAPLE','Maple sap boiled down into syrup and sugar. Indigenous peoples of the Great Lakes and Northeast made maple sugar long before European settlement.'],
+['whitecorn','White corn','Indigenous','Ingredient','bag','CORN','Haudenosaunee white flint corn, one of the Three Sisters with beans and squash, prepared as hulled corn, flour and corn soup.'],
+['sanmarzano','San Marzano tomatoes','Italian','Food','can','POM','Peeled plum tomatoes for sauce. True San Marzano DOP tomatoes are grown in the Sarno valley near Naples.'],
+['parmigiano','Parmigiano Reggiano','Italian','Food','bag','PARM','A hard cow’s-milk cheese aged at least 12 months and made only in a defined area of northern Italy.'],
+['pasta','Bronze-cut pasta','Italian','Ingredient','bag','PASTA','Dried durum-wheat pasta pushed through bronze dies, which leave a rough surface that holds sauce.'],
+['moka','Moka pot','Italian','Household','bag','MOKA','A stovetop coffee maker: steam pressure pushes water up through the grounds into the top chamber. The eight-sided aluminium design dates to 1933.'],
+['feta','Feta','Greek','Food','jar','FETA','A brined white cheese protected as a Greek product, made from sheep’s milk with up to 30% goat’s milk.'],
+['kalamata','Kalamata olives','Greek','Food','jar','OLIVE','Large almond-shaped olives from Messinia, around Kalamata, usually brine-cured and slit.'],
+['rigani','Rigani · Greek oregano','Greek','Ingredient','bag','RIG','Greek oregano dried on the stem, more pungent than most supermarket oregano.'],
+['briki','Briki','Greek','Household','bag','BRIKI','A small long-handled pot for Greek coffee. Its narrow neck helps build the foam, called kaimaki, on top.'],
+['bacalhau','Bacalhau · salt cod','Portuguese','Food','bag','BAC','Dried salted cod, soaked for a day or more before cooking; a cornerstone of Portuguese tables. Salt fish also anchors Caribbean dishes such as ackee and saltfish.'],
+['piripiri','Piri-piri sauce','Portuguese','Condiment','bottle','PIRI','A hot sauce of small bird’s-eye chillies, used on grilled chicken and fish in Portuguese cooking.'],
+['sardinhas','Sardinhas · tinned sardines','Portuguese','Food','can','SAR','Sardines packed in olive oil in decorated tins, part of a long Portuguese canning tradition.'],
+['cataplana','Cataplana','Portuguese','Household','bag','CAT','A hinged copper pan shaped like two clam shells, used to steam seafood stews in the Algarve.']
+].map(([id,name,culture,type,shape,mark,text])=>({id,name,culture,type,shape,mark,text}));
+const S=b=>`<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" text-anchor="middle">${b}</svg>`;
+const T=(x,y,size,fill,t,w=700)=>`<text x="${x}" y="${y}" font-size="${size}" font-weight="${w}" fill="${fill}">${t}</text>`;
+const scatter=(x0,x1,y0,y1,step,fn)=>{let o='',r=0;for(let y=y0;y<=y1;y+=step,r++)for(let x=x0+(r%2)*step/2;x<=x1;x+=step)o+=fn(x+((x*7+y*3)%5-2)*.4,y+((x*3+y)%3-1)*.6,r+Math.round(x));return o};
+const glass=(x,w,y,h)=>`<rect x="${x+5}" y="${y+4}" width="3" height="${h-12}" rx="1.5" fill="#fff" opacity=".28"/>`;
+const tub=(body,lid,rim,label)=>`<rect x="27" y="22" width="66" height="4" rx="2" fill="${rim}"/><rect x="25" y="25" width="70" height="11" rx="3" fill="${lid}"/><path d="M28 36h64l-4 53a3 3 0 0 1-3 3H35a3 3 0 0 1-3-3z" fill="${body}"/><rect x="36" y="46" width="48" height="32" rx="3" fill="#f6ead6"/>${label}`;
+const scotch=(x,y,c)=>`<g transform="translate(${x} ${y})"><path d="M-16-2c0-9 7-13 16-13s16 4 16 13c0 7-3 13-8 15-2-3-4-3-6 0-1 1-3 1-4 0-2-3-4-3-6 0-5-2-8-8-8-15z" fill="${c}"/><ellipse cx="-7" cy="-5" rx="3" ry="5" fill="#fff" opacity=".3"/><ellipse cx="0" cy="-14" rx="7" ry="2.6" fill="#5f8c34"/><path d="M0-15c0-4 2-7 6-8" stroke="#4f7a2a" stroke-width="3" fill="none" stroke-linecap="round"/></g>`;
+const guaj=(x,y,a,c)=>`<g transform="translate(${x} ${y}) rotate(${a})"><path d="M0 0c10-6 40-8 70-2 6 1 10 3 13 5-4 2-10 2-16 2-28 2-54 4-67 2z" fill="${c}"/><path d="M6-2c20-4 40-4 62-1" stroke="#d0574a" stroke-width="1.2" fill="none" opacity=".55"/><ellipse cx="1" cy="0" rx="3" ry="5" fill="#6b5a2a"/><path d="M-1-2c-4-1-7-4-9-8" stroke="#8a7a3a" stroke-width="2.5" fill="none" stroke-linecap="round"/></g>`;
+const bottle=(liq,cap,labelBg,ink,line1,line2)=>`<rect x="51" y="7" width="18" height="10" rx="2" fill="${cap}"/><rect x="53" y="16" width="14" height="14" fill="${liq}"/><path d="M53 30c-10 5-14 10-14 18v40a4 4 0 0 0 4 4h34a4 4 0 0 0 4-4V48c0-8-4-13-14-18z" fill="${liq}"/><rect x="39" y="${line2?60:56}" width="42" height="${line2?24:20}" fill="${labelBg}"/>${T(60,line2?71:69,line1.length>7?6:8,ink,line1,800)}${line2?T(60,80,6,ink,line2,700):''}${glass(39,42,34,54)}`;
+const ruler=(x0,x1,y,label)=>`<path d="M${x0} ${y}h${x1-x0}M${x0} ${y-3}v6M${x1} ${y-3}v6" stroke="#b5bfba" stroke-width="1"/>${T(60,y+12,7,'#b5bfba',label,500)}`;
+const art={
+kimchi:S(`<rect x="38" y="12" width="44" height="11" rx="2" fill="#c8302b"/><path d="M34 26h52a4 4 0 0 1 4 4v56a6 6 0 0 1-6 6H36a6 6 0 0 1-6-6V30a4 4 0 0 1 4-4z" fill="#dfe8e5" opacity=".3"/><path d="M33 36h54v50a4 4 0 0 1-4 4H37a4 4 0 0 1-4-4z" fill="#b8321f"/><path d="M37 44c6 5 12-2 18 2s12 3 18-1 9 0 12 2M37 82c6-5 12 2 18-2s12-3 18 1 9 0 12-2" stroke="#f0d9a0" stroke-width="3" fill="none"/><path d="M40 86c4-6 10-6 14 0M66 86c4-6 10-6 14 0" stroke="#9cb862" stroke-width="2.5" fill="none"/><rect x="30" y="56" width="60" height="20" fill="#f4eee3"/>${T(60,71,13,'#b8321f','김치')}${glass(30,60,28,62)}`),
+gochujang:S(tub('#c9231c','#a51812','#8d130e',T(60,60,11,'#a51812','고추장')+'<path d="M48 70q12 5 24-3" stroke="#c9231c" stroke-width="4.5" fill="none" stroke-linecap="round"/><path d="M72 67q3-3 6-2" stroke="#4f7a2a" stroke-width="2" fill="none"/>')),
+doenjang:S(tub('#7a4b1c','#5d3812','#4a2c0e',T(60,60,11,'#5d3812','된장')+'<g fill="#d9b36a" stroke="#a9833a"><ellipse cx="50" cy="69" rx="4" ry="3.2"/><ellipse cx="60" cy="70" rx="4" ry="3.2"/><ellipse cx="70" cy="69" rx="4" ry="3.2"/></g>')),
+gim:S(`<rect x="12" y="28" width="96" height="60" rx="4" fill="#2e6b3a"/><rect x="12" y="28" width="96" height="6" fill="#265a30"/><rect x="12" y="82" width="96" height="6" fill="#265a30"/><rect x="22" y="40" width="52" height="38" rx="2" fill="#0f1a12"/><g fill="#1d3524" stroke="#2c4a33" stroke-width=".6"><rect x="25" y="43" width="46" height="32"/><rect x="27" y="45" width="42" height="28"/></g><path d="M30 52h36M30 60h36M30 68h36" stroke="#3a5c3f" stroke-width=".7" opacity=".7"/>${T(91,63,18,'#f4eee3','김')}${T(91,73,5.5,'#cfe0c9','SEAWEED',600)}`),
+sujeo:S(`<ellipse cx="38" cy="30" rx="9" ry="7" fill="#aeb6bb"/><ellipse cx="38" cy="30" rx="7" ry="5" fill="#dde3e6"/><path d="M46 28.5L91 27v3l-45 1.5z" fill="#b9c0c5"/><path d="M29 47.5L91 45.5v3.5L29 49z" fill="#b9c0c5"/><path d="M29 47.6L91 45.6" stroke="#eef2f4" stroke-width=".8"/><path d="M29 57.5L91 55.5v3.5L29 59z" fill="#a9b1b6"/><path d="M29 57.6L91 55.6" stroke="#eef2f4" stroke-width=".8"/><g fill="none" stroke="#7d868c" stroke-width=".6"><circle cx="85" cy="47.3" r="1.2"/><circle cx="85" cy="57.3" r="1.2"/><circle cx="85" cy="28.6" r="1.1"/></g>${ruler(29,91,74,'≈21 cm · flat stainless steel')}`),
+jerk:S(`<rect x="51" y="7" width="18" height="10" rx="2" fill="#c8302b"/><rect x="53" y="16" width="14" height="14" fill="#3a1d0f"/><path d="M53 30c-10 5-14 10-14 18v40a4 4 0 0 0 4 4h34a4 4 0 0 0 4-4V48c0-8-4-13-14-18z" fill="#4a2412"/><rect x="39" y="52" width="42" height="28" fill="#f2c230"/><rect x="39" y="52" width="42" height="5" fill="#1f7a3c"/><rect x="39" y="75" width="42" height="5" fill="#111"/>${T(60,69,10,'#111','JERK',800)}${glass(39,42,34,54)}`),
+ackee:S(`<rect x="32" y="22" width="56" height="70" fill="#b9c0c4"/><path d="M32 30h56M32 86h56" stroke="#9aa2a6"/><ellipse cx="60" cy="22" rx="28" ry="6" fill="#d7dde0"/><ellipse cx="60" cy="22" rx="24" ry="4.5" fill="#aeb5b9"/><rect x="32" y="34" width="56" height="48" fill="#f4eee3"/><path d="M45 66c-7-10 0-23 11-23 3 9 1 19-11 23zM75 66c7-10 0-23-11-23-3 9-1 19 11 23z" fill="#c42a1f"/><ellipse cx="56" cy="62" rx="5" ry="4" fill="#f4cf3e"/><ellipse cx="64" cy="62" rx="5" ry="4" fill="#f4cf3e"/><circle cx="56" cy="56" r="3" fill="#111"/><circle cx="64" cy="56" r="3" fill="#111"/>${T(60,77,7.5,'#1f6b37','ACKEE',800)}`),
+callaloo:S(`<path d="M60 92L48 50M60 92V44M60 92l12-42M60 92L42 64M60 92l18-28" stroke="#6b8f3a" stroke-width="2"/><g><ellipse cx="44" cy="40" rx="12" ry="18" transform="rotate(-25 44 40)" fill="#3f7d3a"/><ellipse cx="76" cy="40" rx="12" ry="18" transform="rotate(25 76 40)" fill="#3a7234"/><ellipse cx="60" cy="30" rx="13" ry="21" fill="#4c9142"/><ellipse cx="38" cy="60" rx="9" ry="14" transform="rotate(-55 38 60)" fill="#569c47"/><ellipse cx="82" cy="60" rx="9" ry="14" transform="rotate(55 82 60)" fill="#4f9440"/></g><path d="M60 12v36M44 26l4 26M76 26l-4 26" stroke="#9cc77f" stroke-width="1" opacity=".8"/><rect x="53" y="74" width="14" height="6" rx="1" fill="#c8302b"/>`),
+scotch:S(scotch(60,50,'#f2c12e')+scotch(36,74,'#f07a1a')+scotch(84,75,'#d32a1d')),
+masoor:S(`<rect x="30" y="16" width="60" height="8" fill="#d9472a"/><circle cx="60" cy="20" r="2" fill="#12191b"/><path d="M30 24h60l4 64a4 4 0 0 1-4 4H30a4 4 0 0 1-4-4z" fill="#f1e7d7" opacity=".2"/><path d="M29 38h62l3 50a3 3 0 0 1-3 3H29a3 3 0 0 1-3-3z" fill="#e2733f"/>${scatter(33,86,42,87,5,(x,y,k)=>`<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="2" ry="1.4" fill="${k%3?'#f19a6a':'#c95a2c'}"/>`)}<rect x="36" y="50" width="48" height="24" fill="#f4eee3"/>${T(60,61,8,'#d9472a','MASOOR',800)}${T(60,70,7.5,'#12191b','मसूर दाल',600)}`),
+atta:S(`<path d="M24 26q36-8 72 0l4 62a4 4 0 0 1-4 4H24a4 4 0 0 1-4-4z" fill="#efe2c4"/><path d="M24 26q36-8 72 0v6q-36-6-72 0z" fill="#d8c49c"/><path d="M60 58V36" stroke="#c79a3a" stroke-width="1.5"/><g fill="#d9a94a">${[38,43,48,53].map(y=>`<ellipse cx="57" cy="${y}" rx="2" ry="3.4" transform="rotate(-25 57 ${y})"/><ellipse cx="63" cy="${y}" rx="2" ry="3.4" transform="rotate(25 63 ${y})"/>`).join('')}</g><rect x="21" y="60" width="78" height="14" fill="#1f6b3a"/>${T(60,71,10,'#f4eee3','ATTA',800)}${T(60,84,6.5,'#6b5a3a','CHAPATI FLOUR',600)}`),
+kasuri:S(`<path d="M46 30l8-6h40l-8 6z" fill="#3f9150"/><path d="M86 30l8-6v60l-8 6z" fill="#236030"/><rect x="46" y="30" width="40" height="60" fill="#2f7a3a"/><rect x="50" y="44" width="32" height="30" fill="#f2b930"/>${T(66,58,7.5,'#2f7a3a','METHI',800)}${T(66,68,6,'#2f7a3a','कसूरी मेथी',600)}<path d="M12 92c4-14 14-21 25-21s19 8 21 21z" fill="#6f8a3c"/>${scatter(18,54,78,90,4,(x,y,k)=>`<path d="M${x.toFixed(1)} ${y.toFixed(1)}l2.4-1.2" stroke="${k%2?'#4f6a2a':'#a5b56a'}" stroke-width="1.3"/>`)}`),
+tamarind:S(`<rect x="24" y="26" width="40" height="9" rx="2" fill="#d9a43a"/><path d="M22 36h44v50a6 6 0 0 1-6 6H28a6 6 0 0 1-6-6z" fill="#4a2a16"/><rect x="22" y="52" width="44" height="20" fill="#f4eee3"/>${T(44,65,6.5,'#4a2a16','TAMARIND',800)}${glass(22,44,36,56)}<g fill="#9a6a35" stroke="#6e4520" stroke-width="1"><ellipse cx="80" cy="84" rx="7" ry="5" transform="rotate(-50 80 84)"/><ellipse cx="87" cy="75" rx="7" ry="5" transform="rotate(-55 87 75)"/><ellipse cx="95" cy="67" rx="7" ry="5" transform="rotate(-40 95 67)"/><ellipse cx="104" cy="62" rx="6" ry="4.5" transform="rotate(-20 104 62)"/></g><path d="M109 60l5-3" stroke="#6e4520" stroke-width="1.5"/>`),
+masa:S(`<rect x="30" y="16" width="60" height="9" fill="#e2dccd"/><path d="M30 24h60v64a4 4 0 0 1-4 4H34a4 4 0 0 1-4-4z" fill="#f6f2e8"/><ellipse cx="60" cy="44" rx="8.5" ry="16" fill="#f2c230"/><path d="M53 36h14M52 42h16M52 48h16M53 54h14M57 29v30M63 29v30" stroke="#d9a41f" stroke-width=".8"/><path d="M60 64c-14-4-20-16-18-27 6 8 12 15 18 27zM60 64c14-4 20-16 18-27-6 8-12 15-18 27z" fill="#7aa043"/><rect x="30" y="68" width="60" height="10" fill="#1e7a3a"/><rect x="30" y="78" width="60" height="3" fill="#c8302b"/>${T(60,75.5,7,'#fff','MASA HARINA',800)}`),
+guajillo:S(guaj(18,36,8,'#7a1418')+guaj(15,56,3,'#8d1c1c')+guaj(22,76,-3,'#6b1015')),
+nopales:S(`<ellipse cx="46" cy="58" rx="20" ry="30" transform="rotate(-15 46 58)" fill="#4e8a3a"/><ellipse cx="76" cy="62" rx="18" ry="27" transform="rotate(18 76 62)" fill="#5d9d45"/><ellipse cx="60" cy="24" rx="8" ry="12" fill="#7ab35a"/>${scatter(30,94,34,86,7,(x,y)=>((x-46)/17)**2+((y-58)/26)**2<1||((x-76)/15)**2+((y-62)/23)**2<1?`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="1.1" fill="#e3dcae"/><path d="M${x.toFixed(1)} ${y.toFixed(1)}l1.6-2" stroke="#efe9c8" stroke-width=".5"/>`:'')}`),
+tomatillo:S(`<rect x="24" y="28" width="40" height="9" rx="2" fill="#c9a24a"/><path d="M22 38h44v48a6 6 0 0 1-6 6H28a6 6 0 0 1-6-6z" fill="#6f9a3a"/>${scatter(25,62,40,88,6,(x,y)=>`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r=".9" fill="#c9d88a"/>`)}<rect x="22" y="54" width="44" height="22" fill="#f4eee3"/>${T(44,63,6.5,'#c8302b','SALSA',800)}${T(44,72,6.5,'#2f7a3a','VERDE',800)}${glass(22,44,38,54)}<circle cx="89" cy="79" r="13" fill="#8dbb4a"/><ellipse cx="84" cy="74" rx="3" ry="4" fill="#fff" opacity=".3"/><path d="M75 78c0-16 10-25 14-27 4 2 14 11 14 27-4-7-8-10-14-10s-10 3-14 10z" fill="#d8c48a" opacity=".92" stroke="#b8a26a"/><path d="M89 51v-4" stroke="#6b5a2a" stroke-width="2"/>`),
+miso:S(`<rect x="24" y="36" width="72" height="4" rx="2" fill="#d4c9b0"/><rect x="22" y="39" width="76" height="9" rx="3" fill="#e8dfcc"/><path d="M26 48h68l-4 40a4 4 0 0 1-4 4H34a4 4 0 0 1-4-4z" fill="#c9954a"/><rect x="28" y="56" width="64" height="24" fill="#f4eee3"/><rect x="28" y="56" width="64" height="4" fill="#8d1c1c"/>${T(60,75,12,'#8d1c1c','味噌')}`),
+furikake:S(`<rect x="38" y="22" width="44" height="13" rx="3" fill="#c8302b"/><g fill="#8d130e"><circle cx="50" cy="26" r="1.2"/><circle cx="56" cy="26" r="1.2"/><circle cx="64" cy="26" r="1.2"/><circle cx="70" cy="26" r="1.2"/></g><rect x="40" y="34" width="40" height="58" rx="6" fill="#dfe8e5" opacity=".25"/><rect x="42" y="42" width="36" height="48" rx="4" fill="#26291f"/>${scatter(46,72,45,87,4,(x,y,k)=>`<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="1.5" ry=".9" fill="${['#f2e6c8','#e98a2a','#4a7a3a','#f2e6c8'][k%4]}"/>`)}<rect x="40" y="56" width="40" height="18" fill="#f4eee3"/>${T(60,68,7.5,'#c8302b','ふりかけ')}`),
+yuzu:S(`<rect x="28" y="40" width="32" height="8" rx="2" fill="#2f4a2a"/><path d="M26 48h36v38a6 6 0 0 1-6 6H32a6 6 0 0 1-6-6z" fill="#8fae3a"/><rect x="26" y="60" width="36" height="16" fill="#f4eee3"/>${T(44,71,6.2,'#2f4a2a','柚子胡椒')}${glass(26,36,48,44)}<circle cx="87" cy="75" r="17" fill="#f0c22a"/>${scatter(74,100,64,88,5,(x,y)=>Math.hypot(x-87,y-75)<15?`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r=".8" fill="#d9a91c"/>`:'')}<ellipse cx="81" cy="68" rx="4" ry="5" fill="#fff" opacity=".28"/><path d="M87 58c4-8 12-10 18-8-4 6-10 9-18 8z" fill="#4f8a3a"/>`),
+chopsticks:S(`<path d="M14 42.6L106 39.5V44L14 43.6z" fill="#d9b77a"/><path d="M14 51.6L106 48.5V53L14 52.6z" fill="#c9a160"/><path d="M78 40.5v3M78 49.5v3M50 41.5v1.8M50 50.5v1.8" stroke="#9a7840" stroke-width="1"/><path d="M100 38v17" stroke="#c8302b" stroke-width="1.6"/><path d="M101 54c7 3 9 9 3 11" stroke="#c8302b" stroke-width="1.2" fill="none"/>${ruler(14,106,72,'≈33 cm · bamboo, tied at the top')}`),
+sumac:S(`<ellipse cx="60" cy="68" rx="40" ry="5" fill="#d9c39f"/><path d="M26 70c6-22 22-32 34-32s28 10 34 32z" fill="#7b2a35"/>${scatter(32,90,44,68,4,(x,y,k)=>y>41+((x-60)/32)**2*30?`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r=".8" fill="${k%2?'#a33a48':'#561a24'}"/>`:'')}<path d="M20 68h80c-2 14-16 24-40 24S22 82 20 68z" fill="#ead9bd"/>`),
+limoo:S(`${[[56,52,14,'#a77a3e'],[88,58,12,'#3a2614'],[40,74,15,'#8a6232'],[73,76,14,'#5a3b1f']].map(([x,y,r,c])=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${c}"/><path d="${[20,75,140,200,260,320].map(a=>{const t=a*Math.PI/180;return `M${(x+Math.cos(t)*r*.35).toFixed(1)} ${(y+Math.sin(t)*r*.35).toFixed(1)}L${(x+Math.cos(t)*r*.9).toFixed(1)} ${(y+Math.sin(t)*r*.9).toFixed(1)}`}).join('')}" stroke="#000" stroke-opacity=".22" stroke-width="1.2" stroke-linecap="round"/><path d="M${x-r*.75} ${y-r*.15}a${r*.8} ${r*.8} 0 0 1 ${r*.55} -${r*.55}" stroke="#fff" stroke-opacity=".25" stroke-width="2" fill="none" stroke-linecap="round"/>`).join('')}`),
+barberry:S(`<ellipse cx="60" cy="86" rx="46" ry="7" fill="#ead9bd"/>${[[84,11],[78,9],[72,7],[66,5],[60,3]].map(([y,n],r)=>Array.from({length:n},(_,k)=>{const x=60+(k-(n-1)/2)*7+(r%2)*1.5,yy=y-(k%2);return `<ellipse cx="${x}" cy="${yy}" rx="3.6" ry="2.8" fill="${(k+r)%3?'#c4162c':'#9e0f24'}"/><circle cx="${x-1.2}" cy="${yy-1}" r=".7" fill="#fff" opacity=".55"/>`}).join('')).join('')}`),
+rosewater:S(`<rect x="53" y="6" width="14" height="8" rx="2" fill="#c9a24a"/><rect x="54" y="13" width="12" height="14" fill="#f3c9d2" opacity=".5"/><path d="M54 26c-12 4-16 10-16 18v42a6 6 0 0 0 6 6h32a6 6 0 0 0 6-6V44c0-8-4-14-16-18z" fill="#f3c9d2" opacity=".55"/><rect x="38" y="52" width="44" height="26" fill="#f4eee3"/><circle cx="60" cy="61" r="5" fill="#c8304a"/><path d="M60 61m-2 0a2 2 0 1 1 3 1.5" stroke="#8d1c3a" fill="none"/><path d="M60 66v3" stroke="#4f7a2a" stroke-width="1.5"/>${T(60,76,7.5,'#8d1c3a','گلاب',600)}${glass(38,44,30,58)}`),
+roti:S(`<rect x="20" y="40" width="80" height="52" rx="6" fill="#dfe8e5" opacity=".18"/>${[0,1,2,3,4].map(k=>`<ellipse cx="60" cy="${84-k*7}" rx="36" ry="9" fill="${k%2?'#e6c37e':'#ecd093'}" stroke="#c9a35e"/>`).join('')}${scatter(32,88,52,60,5,(x,y,k)=>`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="1" fill="${k%2?'#b8823a':'#d9b04a'}"/>`)}<rect x="44" y="30" width="32" height="12" fill="#f4eee3"/>${T(60,39,6.5,'#c8302b','ROTI',800)}`),
+peppersauce:S(bottle('#e0661c','#1f7a3c','#f4eee3','#c8302b','PEPPER','SAUCE')),
+sorrel:S(`<rect x="30" y="16" width="60" height="8" fill="#8c1426"/><path d="M30 24h60l4 64a4 4 0 0 1-4 4H30a4 4 0 0 1-4-4z" fill="#f1e7d7" opacity=".18"/><path d="M29 36h62l3 52a3 3 0 0 1-3 3H29a3 3 0 0 1-3-3z" fill="#5e0d1b"/>${scatter(35,83,42,86,6,(x,y,k)=>`<path d="M${x.toFixed(1)} ${(y-4).toFixed(1)}l2.4 3.2 3.6.8-2.6 2.6.4 3.6-3.8-1.6-3.8 1.6.4-3.6-2.6-2.6 3.6-.8z" fill="${k%2?'#b01c33':'#8c1426'}"/>`)}<rect x="38" y="52" width="44" height="18" fill="#f4eee3"/>${T(60,64,8,'#8c1426','SORREL',800)}`),
+cassareep:S(bottle('#140b06','#c9a24a','#f2c230','#140b06','CASSAREEP','')),
+manoomin:S(`<path d="M28 22h64l4 66a4 4 0 0 1-4 4H28a4 4 0 0 1-4-4z" fill="#b8925a"/><rect x="28" y="16" width="64" height="8" fill="#a07c48"/><rect x="36" y="30" width="48" height="30" rx="2" fill="#2a1e12"/>${scatter(38,82,32,58,4,(x,y,k)=>`<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="3" ry=".8" transform="rotate(${(k*37)%180} ${x.toFixed(1)} ${y.toFixed(1)})" fill="${['#6b4a2a','#8a6a3a','#4e3a22','#7a7040'][k%4]}"/>`)}${T(60,74,8,'#2a1e12','MANOOMIN',800)}${T(60,83,4.3,'#4e3a22','HAND-HARVESTED WILD RICE',600)}`),
+maple:S(bottle('#b5651d','#c8302b','#f4eee3','#7a3a10','MAPLE','SYRUP')+'<path d="M60 52.5l1.6 3.4 3-1.4-.8 3.8 3 .8-3 2.4.8 2.2-3.6-.8-.6 3-.4-3-3.6.8.8-2.2-3-2.4 3-.8-.8-3.8 3 1.4z" fill="#c8302b" transform="translate(0 -10)"/>'),
+whitecorn:S(`<path d="M24 24h72v64a4 4 0 0 1-4 4H28a4 4 0 0 1-4-4z" fill="#efe9da"/><rect x="24" y="18" width="72" height="8" fill="#d8cfb8"/><ellipse cx="44" cy="50" rx="8" ry="16" fill="#f4efdf" stroke="#cfc6aa"/><path d="M38 42h12M37 48h14M37 54h14M38 60h12M42 35v30M46 35v30" stroke="#d2c9ad" stroke-width=".8"/><path d="M44 68c-12-4-16-14-15-24 5 7 10 13 15 24zM44 68c12-4 16-14 15-24-5 7-10 13-15 24z" fill="#9a8a5a"/><rect x="60" y="36" width="30" height="30" rx="2" fill="#e8e1cc"/>${scatter(62,88,38,64,4,(x,y)=>`<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="1.8" ry="1.4" fill="#fbf7ea" stroke="#cfc6aa" stroke-width=".4"/>`)}<rect x="24" y="72" width="72" height="12" fill="#3f5b2e"/>${T(60,80.5,7,'#f4eee3','WHITE CORN',800)}`),
+sanmarzano:S(`<rect x="32" y="22" width="56" height="70" fill="#b9c0c4"/><ellipse cx="60" cy="22" rx="28" ry="6" fill="#d7dde0"/><ellipse cx="60" cy="22" rx="24" ry="4.5" fill="#aeb5b9"/><rect x="32" y="32" width="56" height="52" fill="#f4eee3"/><rect x="32" y="32" width="19" height="6" fill="#1f7a3c"/><rect x="51" y="32" width="18" height="6" fill="#f4eee3"/><rect x="69" y="32" width="19" height="6" fill="#c8302b"/><g fill="#c9231c"><ellipse cx="52" cy="56" rx="6.5" ry="10" transform="rotate(-12 52 56)"/><ellipse cx="66" cy="57" rx="6.5" ry="10" transform="rotate(10 66 57)"/></g><path d="M50 46l2 2 2-2M64 47l2 2 2-2" stroke="#3f7d3a" stroke-width="1.5" fill="none"/>${T(60,76,6,'#c8302b','SAN MARZANO',800)}<circle cx="80" cy="46" r="5" fill="#f2c230"/>${T(80,48,3.6,'#1f3a6b','DOP',800)}`),
+parmigiano:S(`<path d="M14 88L100 88L100 44Z" fill="#f0d48a"/>${scatter(40,96,58,86,5,(x,y)=>y>88-(x-14)*44/86+2?`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r=".9" fill="#e0bd68"/>`:'')}<path d="M100 44L108 42V88H100Z" fill="#d49a3f"/>${[48,54,60,66,72,78,84].map(y=>`<circle cx="104" cy="${y}" r=".9" fill="#7a4a12"/>`).join('')}<rect x="52" y="76" width="44" height="9" fill="#f4eee3"/>${T(74,82.5,4.2,'#7a4a12','PARMIGIANO REGGIANO',800)}`),
+pasta:S(`<path d="M30 20h60v68a4 4 0 0 1-4 4H34a4 4 0 0 1-4-4z" fill="#1f3a6b"/><rect x="38" y="28" width="44" height="30" rx="2" fill="#f2e3b0"/>${[[44,36,20],[56,34,-15],[68,38,10],[48,48,-5],[62,49,25],[74,50,-20]].map(([x,y,a])=>`<g transform="rotate(${a} ${x} ${y})"><rect x="${x-6}" y="${y-3.5}" width="12" height="7" rx="1" fill="#e8c977"/><path d="M${x-4} ${y-3.5}v7M${x-1.5} ${y-3.5}v7M${x+1} ${y-3.5}v7M${x+3.5} ${y-3.5}v7" stroke="#c9a14a" stroke-width=".6"/></g>`).join('')}${T(60,72,9,'#f4eee3','PASTA',800)}${T(60,81,4.4,'#f2c230','TRAFILATA AL BRONZO',700)}`),
+moka:S(`<path d="M44 90h32l-4-25H48z" fill="#b9c0c5"/><path d="M52 65l-2 25M60 65v25M68 65l2 25" stroke="#8e969b" stroke-width=".8"/><rect x="46" y="61" width="28" height="5" fill="#8e969b"/><path d="M48 61h24l6-30H42z" fill="#c7cdd1"/><path d="M52 61l-3-30M60 61V31M68 61l3-30" stroke="#9aa2a7" stroke-width=".8"/><path d="M42 31h36l-4-7H46z" fill="#aeb6bb"/><rect x="57" y="18" width="6" height="6" rx="1" fill="#1a1a1a"/><path d="M42 31l-7-5 9 9z" fill="#aeb6bb"/><path d="M78 34h10v22h-10" stroke="#1a1a1a" stroke-width="5" fill="none"/><circle cx="69" cy="77" r="2" fill="#d9a94a"/><rect x="46" y="34" width="3" height="24" fill="#fff" opacity=".35"/>`),
+feta:S(`<rect x="26" y="30" width="68" height="9" rx="3" fill="#1f5aa6"/><path d="M28 39h64l-3 49a4 4 0 0 1-4 4H35a4 4 0 0 1-4-4z" fill="#dfe8e5" opacity=".3"/><path d="M30 50h60l-2 38a3 3 0 0 1-3 3H35a3 3 0 0 1-3-3z" fill="#e6eddc" opacity=".45"/><rect x="36" y="54" width="48" height="32" rx="2" fill="#f8f6ee"/>${scatter(40,80,58,82,7,(x,y)=>`<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="1.4" ry=".9" fill="#e4e0d2"/>`)}${T(60,74,12,'#1f5aa6','ΦΕΤΑ',800)}`),
+kalamata:S(`<rect x="38" y="12" width="44" height="11" rx="2" fill="#5a2a4a"/><path d="M34 26h52a4 4 0 0 1 4 4v56a6 6 0 0 1-6 6H36a6 6 0 0 1-6-6V30a4 4 0 0 1 4-4z" fill="#dfe8e5" opacity=".3"/><path d="M33 34h54v52a4 4 0 0 1-4 4H37a4 4 0 0 1-4-4z" fill="#3a2a1a" opacity=".85"/>${scatter(38,82,38,86,9,(x,y,k)=>`<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="4" ry="6" transform="rotate(${k%2?30:-25} ${x.toFixed(1)} ${y.toFixed(1)})" fill="${k%3?'#4a2340':'#3a1a32'}"/><ellipse cx="${(x-1.2).toFixed(1)}" cy="${(y-2).toFixed(1)}" rx="1" ry="1.6" fill="#fff" opacity=".35"/>`)}<rect x="30" y="56" width="60" height="18" fill="#f4eee3"/>${T(60,68,8,'#4a2340','KALAMATA',800)}${glass(30,60,28,62)}`),
+rigani:S(`<path d="M60 92L44 30M60 92L52 24M60 92V22M60 92l8-68M60 92l16-62M60 92L36 40M60 92l24-52" stroke="#a08a5a" stroke-width="1.6"/>${[[44,30],[52,24],[60,22],[68,24],[76,30],[36,40],[84,40],[48,40],[72,40],[56,32],[64,32]].map(([x,y],k)=>`<ellipse cx="${x}" cy="${y}" rx="6" ry="9" fill="${k%2?'#8a9a6a':'#a9b48a'}"/>`).join('')}${scatter(32,88,16,46,4,(x,y,k)=>Math.hypot(x-60,(y-32)*1.4)<26?`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r=".9" fill="${k%2?'#6f7f52':'#c4cba6'}"/>`:'')}<rect x="54" y="70" width="12" height="6" fill="#1f5aa6"/><rect x="66" y="74" width="26" height="11" fill="#f4eee3"/>${T(79,82,6,'#1f5aa6','ΡΙΓΑΝΗ',800)}`),
+briki:S(`<path d="M74 60L112 46" stroke="#2a2a2a" stroke-width="4" stroke-linecap="round"/><path d="M50 62h20q10 8 8 26H42q-2-18 8-26z" fill="#c4733a"/><path d="M50 62l-4-7h28l-4 7z" fill="#d98a4f"/><path d="M46 55l-4-2" stroke="#d98a4f" stroke-width="2"/><path d="M48 70q-2 8 0 16" stroke="#f0b380" stroke-width="2" fill="none" opacity=".7"/>`),
+bacalhau:S(`<path d="M12 70C28 40 78 34 98 48L112 38L110 66L98 60C80 80 30 84 12 70Z" fill="#ece6d6" stroke="#b8b09a"/><path d="M16 66C34 46 74 42 96 50" stroke="#6f6a5e" stroke-width="3" fill="none"/><path d="M30 64q10-6 20 0M48 66q10-6 20 0M66 64q10-6 18 0M38 74q10-5 20 0M58 74q8-5 18-1" stroke="#d4ccb6" fill="none"/>${scatter(28,90,56,72,5,(x,y)=>`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r=".6" fill="#fff"/>`)}<path d="M40 74l-6 12" stroke="#8a7a5a"/><rect x="18" y="84" width="38" height="10" fill="#f4eee3"/>${T(37,91.5,5.5,'#1f3a6b','BACALHAU',800)}`),
+piripiri:S(bottle('#b8231a','#1f7a3c','#f4eee3','#b8231a','PIRI-PIRI','')),
+sardinhas:S(`<rect x="14" y="48" width="92" height="40" rx="8" fill="#9aa2a6"/><rect x="18" y="52" width="84" height="32" rx="5" fill="#2f6fb0"/><rect x="18" y="52" width="84" height="7" fill="#f2c230"/><rect x="18" y="77" width="84" height="7" fill="#c8302b"/><path d="M34 68c6-6 16-6 24 0-8 6-18 6-24 0zM58 68l6-4v8z" fill="#c7cdd1"/><circle cx="38" cy="67" r="1" fill="#1a1a1a"/>${T(80,70.5,6,'#f4eee3','SARDINHAS',800)}<path d="M104 46l8-8" stroke="#9aa2a6" stroke-width="3" stroke-linecap="round"/>`),
+cataplana:S(`<path d="M18 64Q60 16 102 64Z" fill="#c4733a"/><path d="M18 68C30 92 90 92 102 68Z" fill="#a95e2c"/><rect x="16" y="63" width="88" height="5" fill="#8a4a22"/><circle cx="104" cy="65.5" r="3.5" fill="#6e3a18"/><circle cx="16" cy="65.5" r="3" fill="#6e3a18"/><path d="M40 34q20-12 40 0" stroke="#f0b380" stroke-width="3" fill="none" opacity=".6"/><path d="M50 22h20" stroke="#6e3a18" stroke-width="4" stroke-linecap="round"/>`)
+};
+const spot={
+kimchi:'Jars or pouches of red, chilli-coated napa cabbage; labels often read 김치.',
+gochujang:'Red rectangular tub, usually with a red lid; labelled 고추장.',
+doenjang:'Brown tub of thick, chunky soybean paste; labelled 된장.',
+gim:'Flat packets of thin, dark-green sheets, often in snack-size multipacks; labelled 김.',
+sujeo:'Flat stainless-steel chopsticks, about 21 cm, sold as a matched set with a long-handled round spoon.',
+jerk:'Dark brown sauce or paste; the ingredients list allspice (pimento) and Scotch bonnet.',
+ackee:'Tins of ackee in brine: soft yellow pieces. Fresh pods are red with black seeds.',
+callaloo:'Fresh bunches of tender green amaranth leaves, or tins near the ackee.',
+scotch:'Squat, lantern-shaped pepper with a crinkled base, in yellow, orange or red. Not the smoother, pointier habanero.',
+masoor:'Small salmon-pink split lentils (whole masoor is brown).',
+atta:'Large sacks marked “atta” or “chapati flour”.',
+kasuri:'Small boxes or bags of crumbled, dried grey-green leaves with a strong aroma.',
+tamarind:'Dark brown paste in jars, or blocks of pulp. Fresh pods have brittle brown shells.',
+masa:'Bags marked “masa harina” or “nixtamalized corn flour”. Not the same as cornmeal or cornstarch.',
+guajillo:'Long, smooth, shiny dried chillies in deep burgundy. The wider, wrinkled ones are ancho.',
+nopales:'Flat green paddles with small spine nodes, or jars of sliced “nopalitos”.',
+tomatillo:'Green salsa in jars. Fresh tomatillos look like small green tomatoes in a papery husk.',
+miso:'Tubs of thick paste, from pale tan (shiro) to red-brown (aka); labelled 味噌.',
+furikake:'Small shaker jars or pouches of seaweed, sesame and seasoning flakes; labelled ふりかけ.',
+yuzu:'Tiny jars or tubes of green (sometimes red) paste; labelled 柚子胡椒.',
+chopsticks:'A long bamboo pair, about 30–33 cm, often tied together with string at the top.',
+sumac:'Coarse, deep red-purple powder. It should look crimson, not brown.',
+limoo:'Hard, hollow dried limes, tan to black, sold whole or ground.',
+barberry:'Small, bright-red, tart dried berries. Brighter ruby ones are fresher.',
+rosewater:'Clear liquid in a glass or plastic bottle, often labelled گلاب (golab).',
+roti:'Stacks of soft, round flatbreads in bags, often near the freezer. Dhalpuri has yellow split-pea filling; “buss-up-shut” is a torn, flaky paratha.',
+peppersauce:'Small bottles of thick yellow, orange or red sauce; the label usually names Scotch bonnet or another hot pepper.',
+sorrel:'Bags of deep crimson dried calyces that look like tiny petals. Sometimes labelled hibiscus or flor de jamaica.',
+cassareep:'Small bottles of thick, glossy black syrup; Guyanese brands are common.',
+manoomin:'Hand-harvested manoomin is mixed brown and green-brown with varied grain lengths. Uniform glossy black grains are usually cultivated paddy rice.',
+maple:'Glass bottles or tins graded Golden, Amber, Dark or Very Dark. Darker grades taste stronger.',
+whitecorn:'Bags of dried, hulled white kernels or white corn flour, often from Haudenosaunee growers.',
+sanmarzano:'Tins marked “Pomodoro San Marzano dell’Agro Sarnese-Nocerino DOP” with a consortium seal. “San Marzano style” is not the same.',
+parmigiano:'Wedges with a hard golden rind stamped in dotted letters that spell the name.',
+pasta:'A dusty, matte, rough surface and a label reading “trafilata al bronzo”. Smooth, shiny pasta is Teflon-cut.',
+moka:'Eight-sided aluminium or steel pot with a black handle and a small brass safety valve on the bottom chamber.',
+feta:'Blocks stored in brine in tubs or tins, labelled ΦΕΤΑ and PDO. Greek feta is mostly sheep’s milk.',
+kalamata:'Dark purple, almond-shaped olives in brine, often slit. PDO jars say “Kalamata”.',
+rigani:'Dried oregano sold on the stem in bundles or cellophane bags, labelled ΡΙΓΑΝΗ.',
+briki:'A small copper or steel pot with a narrow neck and a long handle, sized in cups.',
+bacalhau:'Stiff, flat, salt-crusted white fillets, sold whole or cut by weight near the deli counter.',
+piripiri:'Small bottles of thin red sauce, often with a whole chilli inside.',
+sardinhas:'Flat tins in brightly printed paper wrappers, packed in olive oil.',
+cataplana:'A hinged pan of two copper domes that clamp shut, usually tin- or steel-lined.'
+};
+const selected=new Set();let culture='All';const $=s=>document.querySelector(s);const escapeText=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const mapPlaces=[
+{id:'pat-history',cultures:['Korean'],x:180,y:165,title:'PAT · Palmerston Avenue',label:'PAT / 1972',kind:'Historical location · 1972',text:'The Lee family opened PAT on Palmerston Avenue in 1972. The shop helped establish supply chains for Korean ingredients such as kimchi and gochujang. This pin marks the historical street area, not the current shop address.',source:'Museum of Toronto · PAT history',url:groups.Korean.sourceUrl},
+{id:'gerrard',cultures:['South Asian'],x:585,y:211,title:'Gerrard India Bazaar',label:'Gerrard Bazaar',kind:'Historical neighbourhood · 1970s',text:'The Naaz theatre drew audiences to South Asian films on Gerrard Street East. Grocers, restaurants and other businesses grew around that gathering place. This is a neighbourhood story, separate from the Iqbal shopping option on your receipt.',source:'Heritage Toronto · Gerrard Bazaar',url:'https://www.heritagetoronto.org/explore/gerrard-bazaar-little-india/'},
+{id:'perola',cultures:['Mexican'],x:225,y:235,title:'Perola’s · Kensington Market',label:'Perola’s',kind:'Present-day store · 247 Augusta Avenue',text:'Perola’s describes its role introducing Latin American products to Toronto. Its shop connects a local market street with ingredients from Mexico and many other Latin American countries.',source:'Perola’s · Story & location',url:'https://www.perolassupermarket.com/'},
+{id:'sanko',cultures:['Japanese'],x:160,y:274,title:'Sanko · Queen West',label:'Sanko',kind:'Present-day store · 730 Queen Street West',text:'Japanese foods and household goods sit together at Sanko. The shop offers a way to explore how ingredients, cooking tools and everyday routines help carry culture into a Toronto home.',source:'Sanko · Location & store',url:'https://toronto-sanko.com/about-us/location/'},
+{id:'ava',cultures:['Persian'],x:365,y:75,title:'Ava Esfahan · North York',label:'Ava Esfahan',kind:'Present-day store · 193 Sheppard Avenue East',text:'A Persian specialty market offers another connection between food and place. Ava’s catalogue includes sumac. This pin marks a present-day shopping location; no founding date is asserted here.',source:'Ava Esfahan · Sumac & address',url:groups.Persian.sourceUrl},
+{id:'little-jamaica',cultures:['Jamaican','Caribbean'],x:165,y:118,title:'Little Jamaica · Eglinton Avenue West',label:'Little Jamaica',kind:'Historical neighbourhood · late 1970s onward',text:'From the late 1970s, Caribbean groceries, patty shops, restaurants, salons and music stores clustered along Eglinton Avenue West. In 2021, City Council directed a cultural heritage survey of the area.',source:'Heritage Toronto · Little Jamaica',url:'https://www.heritagetoronto.org/explore/little-jamaica-toronto-history/'},
+{id:'corso-italia',cultures:['Italian'],x:132,y:140,title:'Pusateri’s · Corso Italia',label:'Corso Italia / 1963',kind:'Historical location · 1963',text:'Salvatore and Rosaria Pusateri opened a produce market at Dufferin and St. Clair in 1963. The family business later grew into a fine-food grocer. This pin marks the original neighbourhood, not a current store.',source:'Retail Insider · Pusateri’s at 60',url:'https://retail-insider.com/retail-insider/2023/03/pusateris-fine-foods-to-open-store-in-torontos-little-italy-as-the-retailer-marks-60-years-interview/'},
+{id:'ncct',cultures:['Indigenous'],x:222,y:148,title:'Native Canadian Centre of Toronto',label:'NCCT',kind:'Community centre · 16 Spadina Road',text:'Incorporated in 1962, the centre has been at 16 Spadina Road since the mid-1970s and hosts markets and gatherings. Toronto is on the traditional territory of many nations, including the Mississaugas of the Credit, the Anishinabeg, the Chippewa, the Haudenosaunee and the Wendat peoples.',source:'NCCT · About us',url:'https://www.ncct.on.ca/about-us'},
+{id:'greektown',cultures:['Greek'],x:520,y:165,title:'Greektown · Danforth Avenue',label:'Greektown',kind:'Historical neighbourhood · 1950s–1970s',text:'Postwar Greek migration consolidated a community along the Danforth after earlier downtown settlement. Homes, institutions and food shops formed the district before it was branded Greektown.',source:'York University · The Making of Greektown',url:'https://www.yorku.ca/research/project/hhfgca/making-greektown/'},
+{id:'kensington-pt',cultures:['Portuguese'],x:252,y:224,title:'Kensington Market · Portuguese shops',label:'Kensington / 1950s',kind:'Historical neighbourhood · 1950s–1960s',text:'Portuguese newcomers joined an established market in the 1950s and 60s, opening fish shops, groceries and other businesses beside earlier vendors. Successive communities have adapted the same market streets.',source:'Kensington Market Historical Society',url:'https://kmhs.ca/footnotes/kensington-market-in-the-1950s-1960s/'}
+];
+let focusedPlace='pat-history';
+function renderMap(preferredCulture){
+ const activeCultures=new Set([...selected].map(id=>items.find(i=>i.id===id).culture));
+ if(preferredCulture){const place=mapPlaces.find(p=>p.cultures.includes(preferredCulture));if(place)focusedPlace=place.id}
+ const focused=mapPlaces.find(p=>p.id===focusedPlace)||mapPlaces[0];
+ $('#map-pins').innerHTML=mapPlaces.map(p=>`<g class="map-pin ${p.cultures.some(c=>activeCultures.has(c))?'active':''} ${p.id===focused.id?'focused':''}"><circle cx="${p.x}" cy="${p.y}" r="13"/><text x="${p.x>450?p.x-22:p.x+22}" y="${p.y-18}" text-anchor="${p.x>450?'end':'start'}">${p.label}</text></g>`).join('');
+ $('#map-places').innerHTML=mapPlaces.map(p=>`<button type="button" data-place="${p.id}" data-active="${p.cultures.some(c=>activeCultures.has(c))}" aria-pressed="${p.id===focusedPlace}">${p.label}</button>`).join('');
+ $('#map-detail').innerHTML=`<div class="eyebrow accent">${focused.kind}</div><h3>${focused.title}</h3><p>${focused.text}</p><a href="${focused.url}" target="_blank" rel="noopener">${focused.source} ↗</a>`;
+ const highlighted=mapPlaces.filter(p=>p.cultures.some(c=>activeCultures.has(c))).length;
+ $('#map-status').textContent=`${highlighted} ${highlighted===1?'place':'places'} highlighted by your basket.`+' Choose a place to read its story.';
+}
+$('#map-places').addEventListener('click',event=>{const b=event.target.closest('[data-place]');if(!b)return;focusedPlace=b.dataset.place;renderMap();document.querySelector(`[data-place="${focusedPlace}"]`)?.focus()});
+$('#filters').innerHTML=['All',...Object.keys(groups)].map(g=>`<button type="button" data-culture="${g}" aria-pressed="${g==='All'}">${g==='All'?'All connections':g}</button>`).join('');
+function renderShelf(){const q=$('#search').value.toLowerCase().trim();const visible=items.filter(i=>(culture==='All'||i.culture===culture)&&($('#type').value==='All'||i.type===$('#type').value)&&[i.name,i.culture,i.type,i.text,groups[i.culture].shop,i.id==='kimchi'?'Costco':''].join(' ').toLowerCase().includes(q));$('#result-count').textContent=`${visible.length} of ${items.length} things to discover`;$('#no-results').hidden=visible.length>0;$('#shelf').innerHTML=visible.map(i=>`<button type="button" class="product" data-scan="${i.id}" aria-pressed="${selected.has(i.id)}"><span class="art" aria-hidden="true">${art[i.id]}</span><span class="culture">${i.culture} connection / ${i.type}</span><strong>${i.name}</strong><span class="culture">Package code: ${i.id}</span><span class="scan">${selected.has(i.id)?'✓ In your basket':'＋ Scan & discover'}</span></button>`).join('')}
+function renderBasket(){renderMap();renderCart();$('#basket-count').textContent=String(selected.size).padStart(2,'0');$('#print').disabled=$('#reset').disabled=selected.size===0;$('#basket').innerHTML=selected.size?[...selected].map(id=>{const i=items.find(i=>i.id===id),g=groups[i.culture];return `<article class="entry"><span class="thumb" aria-hidden="true">${art[i.id]}</span><div class="eyebrow">${i.culture} connection</div><h3>${i.name}</h3><p>${i.text}</p><p class="spot"><b>Spot it</b>${spot[i.id]}</p><div class="place"><div class="eyebrow">01 / ${g.tag}</div><strong>${g.shop}</strong><p>${g.why}</p><a href="${g.url}" target="_blank" rel="noopener">Explore this place ↗</a></div><div class="alternative"><div class="eyebrow">02 / Another place to look</div><a href="${g.altUrl}" target="_blank" rel="noopener">${g.alt} ↗</a>${id==='kimchi'?'<p><a href="https://www.costcobusinesscentre.ca/condiment.html" target="_blank" rel="noopener">Costco · Jongga kimchi listing ↗</a><br><span class="note">A broader retail option. PAT leads here for its documented Korean community history.</span></p>':''}</div><a class="source" href="${g.sourceUrl}" target="_blank" rel="noopener">${g.source} ↗</a><p class="note">Check current selection with the store.</p><button class="remove" type="button" data-remove="${id}" aria-label="Remove ${escapeText(i.name)}" style="background:none;border:0;padding:4px 0;text-decoration:underline;color:inherit">Remove</button></article>`}).join(''):'<p class="empty">Your receipt starts with an ingredient.<br>Scan anything from the shelf.</p>'}
+$('#filters').addEventListener('click',e=>{const b=e.target.closest('[data-culture]');if(!b)return;culture=b.dataset.culture;document.querySelectorAll('[data-culture]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.culture===culture)));renderShelf()});$('#search').addEventListener('input',renderShelf);$('#type').addEventListener('change',renderShelf);$('#shelf').addEventListener('click',e=>{const b=e.target.closest('[data-scan]');if(!b)return;addToCart(items.find(i=>i.id===b.dataset.scan),b)});$('#basket').addEventListener('click',e=>{const b=e.target.closest('[data-remove]');if(!b)return;const id=b.dataset.remove;selected.delete(id);renderBasket();renderShelf();document.querySelector(`[data-scan="${id}"]`)?.focus()});$('#reset').addEventListener('click',()=>{selected.clear();window.speechSynthesis?.cancel();showLines(['Your basket is empty.','Choose another ingredient.']);renderBasket();renderShelf();$('#search').focus()});$('#print').addEventListener('click',()=>window.print());renderShelf();renderBasket();
+
+let voiceEnabled=false;
+let currentLines=['Choose an ingredient from the shelf.', "I'll help you find its story."];
+const speechAvailable='speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+function speakLines(){
+ if(!speechAvailable)return;
+ window.speechSynthesis.cancel();
+ const utterance=new window.SpeechSynthesisUtterance(currentLines.join(' '));
+ utterance.lang='en-CA';utterance.rate=.9;
+ utterance.onerror=()=>{$('#voice-status').textContent='Voice could not play. Follow the visible lines.'};
+ window.speechSynthesis.speak(utterance);
+}
+function showLines(lines){currentLines=lines;$('#voice-lines').innerHTML=lines.map(line=>`<p>${escapeText(line)}</p>`).join('');if(voiceEnabled)speakLines()}
+function scanPackage(id){
+ const item=items.find(i=>i.id===id);
+ if(!item){$('#demo-status').textContent='Code not found. Use a package code shown on the shelf.';return false}
+ if(selected.has(id)){showLines([`${item.name} is already in your basket.`,'Choose another ingredient.']);return false}
+ selected.add(id);renderBasket();renderShelf();renderMap(item.culture);
+ showLines([`${item.name}.`, id==='kimchi'?'Start with PAT Central.':'Explore '+groups[item.culture].shop+'.',id==='kimchi'?'Its Toronto story begins in 1972.':'Follow the source on your receipt.']);
+ $('#demo-status').textContent=`Package confirmed: ${item.name}.`;
+ return true;
+}
+function checkoutCue(){
+ showLines(['A hand crossed the basket opening.','Confirm the package to hear its story.']);
+ $('#demo-status').textContent='Crossing cue only. No package was identified or added.';
+ try{const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio)return;const ctx=new Audio();const tone=ctx.createOscillator(),gain=ctx.createGain();tone.frequency.value=740;gain.gain.setValueAtTime(.04,ctx.currentTime);gain.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+.12);tone.connect(gain);gain.connect(ctx.destination);tone.start();tone.stop(ctx.currentTime+.12);tone.onended=()=>ctx.close()}catch{}
+}
+$('#voice-toggle').addEventListener('click',()=>{voiceEnabled=!voiceEnabled;$('#voice-toggle').setAttribute('aria-pressed',String(voiceEnabled));$('#voice-toggle').textContent=voiceEnabled?'Mute basket voice':'Turn voice on';$('#voice-status').textContent=voiceEnabled?'Voice is on. Sound follows your computer’s selected speaker.':'Sound is off. These same lines stay visible on the counter.';if(voiceEnabled)speakLines();else window.speechSynthesis?.cancel()});
+$('#voice-replay').addEventListener('click',speakLines);
+$('#voice-stop').addEventListener('click',()=>window.speechSynthesis?.cancel());
+$('#cashier').addEventListener('submit',event=>{event.preventDefault();if(scanPackage($('#package-code').value.trim().toLowerCase()))$('#package-code').value=''});
+$('#hand-cue').addEventListener('click',checkoutCue);
+window.addEventListener('pagehide',()=>window.speechSynthesis?.cancel());
+if(!speechAvailable){$('#voice-toggle').disabled=$('#voice-replay').disabled=$('#voice-stop').disabled=true;$('#voice-status').textContent='This browser does not support the basket voice. Follow the visible lines.'}
+// ---- Checkout conveyor (shares the shelf basket, receipt, captions and map)
+const BELT_STEP=7000; // slow pace: ms each item stays highlighted
+function renderCart(){
+ const added=[...selected].map(id=>items.find(i=>i.id===id));
+ $('#cart-count').textContent=`Cart · ${String(added.length).padStart(2,'0')} ${added.length===1?'item':'items'}`;$('#co-empty').disabled=!added.length;
+ $('#cart-items').innerHTML=added.slice(-6).map(i=>`<span class="cart-pack" title="${escapeText(i.name)}">${art[i.id]}</span>`).join('')+(added.length>6?`<span class="cart-more">+${added.length-6}</span>`:'');
+}
+const beltItems=items; // every food in the options list rides the belt
+const beltEl=$('#belt'),cartStatus=$('#cart-status'),cameraStatus=$('#camera-status'),webcam=$('#webcam'),cameraButton=$('#camera-toggle');
+const reduceMotion=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
+let beltIndex=0,beltPaused=reduceMotion(),nextRotation=performance.now()+BELT_STEP,handPending=false,cameraStream,recognizer,listening=false,checkoutAudio,steering=false;
+beltEl.innerHTML=beltItems.map(i=>`<button type="button" data-belt="${i.id}" aria-label="Select ${escapeText(i.name)}" aria-pressed="false" hidden><span class="art" aria-hidden="true">${art[i.id]}</span><span class="belt-name">${i.name.split(' · ')[0]}</span></button>`).join('');
+const beltButtons=[...beltEl.querySelectorAll('button')];
+$('#belt-jump').innerHTML=Object.keys(groups).map(c=>`<button type="button" data-jump="${c}" aria-pressed="false">${c}</button>`).join('');
+// How many packages fit on the visible belt (odd, so one sits in the middle).
+function beltVisibleCount(){const cs=getComputedStyle(beltEl),gap=parseFloat(cs.columnGap)||10,inner=(beltEl.clientWidth||900)-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);const w=beltButtons.find(b=>!b.hidden)?.offsetWidth||parseFloat(getComputedStyle(beltButtons[0]).flexBasis)||126;const fit=Math.max(1,Math.min(9,Math.floor((inner+gap)/(w+gap))));return Math.min(fit>=5&&fit%2===0?fit-1:fit,beltItems.length)}
+// Normal mode: a window centred on the highlighted item. Steering mode: fixed pages so slots don't move under the hand.
+function beltWindow(){const n=beltItems.length,v=beltVisibleCount();if(steering){const start=Math.floor(beltIndex/v)*v;return{n,v,start,len:Math.min(v,n-start),paged:true}}return{n,v,center:Math.floor(v/2),paged:false}}
+function selectBelt(next){
+ const n=beltItems.length;beltIndex=((next%n)+n)%n;
+ const before=beltButtons.map(b=>b.hidden?null:b.getBoundingClientRect().left);
+ const w=beltWindow();
+ beltButtons.forEach((b,pos)=>{const order=w.paged?pos-w.start:(pos-beltIndex+w.center+n)%n;const show=order>=0&&order<(w.paged?w.len:w.v);b.style.order=show?order:n;b.hidden=!show;b.setAttribute('aria-pressed',String(pos===beltIndex))});
+ if(!reduceMotion())beltButtons.forEach((b,pos)=>{if(b.hidden)return;const prev=before[pos];const d=prev===null?Infinity:prev-b.getBoundingClientRect().left;if(Math.abs(d)<5)return;if(Math.abs(d)>beltEl.clientWidth*.65)b.animate([{opacity:0},{opacity:1}],{duration:500});else b.animate([{translate:d+'px'},{translate:'0px'}],{duration:700,easing:'ease-in-out'})});
+ const item=beltItems[beltIndex];
+ $('#co-add').textContent='Add '+item.name.split(' · ')[0];
+ $('#belt-pos').textContent=`${String(beltIndex+1).padStart(2,'0')} of ${n} · ${item.culture}`;
+ document.querySelectorAll('[data-jump]').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.jump===item.culture)));
+ nextRotation=performance.now()+BELT_STEP;
+ if(steering)renderSteer();
+}
+function checkoutBeep(){try{checkoutAudio??=new (window.AudioContext||window.webkitAudioContext)();checkoutAudio.resume().catch(()=>{});const tone=checkoutAudio.createOscillator(),gain=checkoutAudio.createGain(),t=checkoutAudio.currentTime;tone.frequency.setValueAtTime(530,t);tone.frequency.setValueAtTime(790,t+.07);gain.gain.setValueAtTime(.045,t);gain.gain.exponentialRampToValueAtTime(.001,t+.19);tone.connect(gain);gain.connect(checkoutAudio.destination);tone.start(t);tone.stop(t+.19)}catch{}}
+function setStatus(text){cartStatus.textContent=text;$('#say-status').textContent=text}
+// One way in for every source: belt, hand, voice, or a click on the options list.
+function addToCart(item,originEl){
+ nextRotation=performance.now()+BELT_STEP;
+ const origin=originEl?.getBoundingClientRect();
+ if(!scanPackage(item.id)){setStatus(`${item.name} is already in your cart.`);return false}
+ setStatus(`${item.name} added. Its story is on your receipt.`);
+ const target=$('#cart-items').getBoundingClientRect();
+ const visible=r=>r&&r.bottom>0&&r.top<innerHeight&&r.width>0;
+ if(!reduceMotion()&&visible(origin)&&visible(target)){
+  const size=Math.min(origin.width,160),flying=document.createElement('span');flying.innerHTML=art[item.id];
+  Object.assign(flying.style,{position:'fixed',left:origin.left+'px',top:origin.top+'px',width:size+'px',pointerEvents:'none',zIndex:10});
+  document.body.append(flying);
+  flying.animate([{transform:'translate(0,0)'},{transform:`translate(${target.left+target.width/2-origin.left-size/2}px,${target.top-origin.top}px) scale(.4)`}],{duration:520,easing:'cubic-bezier(.25,.7,.45,1)'}).finished.then(()=>flying.remove());
+ }
+ if(!reduceMotion()){const stage=$('#cart-stage');stage.classList.add('pulse');setTimeout(()=>stage.classList.remove('pulse'),650)}
+ checkoutBeep();
+ return true;
+}
+function addFromBelt(item=beltItems[beltIndex]){return addToCart(item,beltButtons[beltItems.indexOf(item)])}
+function renderPause(){$('#co-pause').textContent=beltPaused?'Resume belt':'Pause belt';$('#co-pause').setAttribute('aria-pressed',String(beltPaused));beltEl.classList.toggle('paused',beltPaused||steering)}
+beltButtons.forEach((b,pos)=>b.addEventListener('click',()=>selectBelt(pos)));
+$('#belt-prev').addEventListener('click',()=>selectBelt(beltIndex-1));
+$('#belt-next').addEventListener('click',()=>selectBelt(beltIndex+1));
+$('#belt-jump').addEventListener('click',e=>{const c=e.target.closest('[data-jump]');if(c)selectBelt(beltItems.findIndex(i=>i.culture===c.dataset.jump))});
+// Sideways trackpad swipe (or Shift + wheel) steps the belt; ordinary vertical scrolling still scrolls the page.
+let wheelAt=0;
+beltEl.parentElement.addEventListener('wheel',e=>{const d=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:(e.shiftKey?e.deltaY:0);if(Math.abs(d)<4)return;e.preventDefault();const t=performance.now();if(t-wheelAt<260)return;wheelAt=t;selectBelt(beltIndex+(d>0?1:-1))},{passive:false});
+$('#co-add').addEventListener('click',()=>addFromBelt());
+$('#co-empty').addEventListener('click',()=>{$('#reset').click();setStatus('Cart emptied. Ready for the next shopper.')});
+$('#co-pause').addEventListener('click',()=>{beltPaused=!beltPaused;nextRotation=performance.now()+BELT_STEP;renderPause()});
+document.addEventListener('keydown',e=>{
+ if(e.repeat||e.altKey||e.metaKey||e.ctrlKey||e.target!==document.body)return;
+ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();selectBelt(beltIndex+(e.key==='ArrowLeft'?-1:1))}
+ if(e.key===' '){e.preventDefault();addFromBelt()}
+});
+let resizeTimer;addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>selectBelt(beltIndex),150)});
+setInterval(()=>{if(!steering&&!beltPaused&&!listening&&!handPending&&performance.now()>=nextRotation)selectBelt(beltIndex+1)},150);
+
+// ---- Voice to text: any item on the belt
+const voiceExtra={kimchi:['kim chi'],gochujang:['gochu jang','korean chili paste','korean chilli paste','red pepper paste'],doenjang:['soybean paste','dwenjang'],gim:['seaweed','laver'],sujeo:['steel chopsticks','korean chopsticks','spoon and chopsticks','korean spoon'],ackee:['akee'],scotch:['scotch bonnet','scotch bonnets'],masoor:['lentil','lentils','red dal','masoor'],atta:['chapati flour','roti flour','atta'],kasuri:['methi','fenugreek','kasoori methi'],tamarind:['tamarind'],masa:['masa','corn flour'],guajillo:['guajillo','guajillo chili','guajillo chilies','dried chili','dried chilli'],nopales:['cactus','nopal','nopalitos'],tomatillo:['salsa verde','green salsa','tomatillo','tomatillos'],miso:['mi so'],yuzu:['yuzu'],chopsticks:['saibashi','cooking chopsticks','japanese chopsticks','chopsticks'],sumac:['su mac','sumak'],limoo:['dried lime','dried limes','black lime','limoo','loomi'],barberry:['zereshk','barberries','barberry'],rosewater:['rose water'],
+ roti:['roti','roti skin','dhalpuri','dal puri','buss up shut'],peppersauce:['hot sauce','hot pepper sauce'],sorrel:['hibiscus','sorrel drink'],cassareep:['cassareep','casareep'],manoomin:['wild rice','manoomin'],maple:['maple'],whitecorn:['white corn','hominy','corn soup'],sanmarzano:['san marzano','tomatoes','canned tomatoes'],parmigiano:['parmesan','parmigiano','parm'],pasta:['pasta','rigatoni'],moka:['moka','coffee maker','espresso pot','stovetop espresso'],kalamata:['olives','kalamata'],rigani:['oregano','greek oregano'],briki:['coffee pot','greek coffee pot','greek coffee'],bacalhau:['salt cod','bacalao','salt fish','saltfish','bacalhau'],piripiri:['piri piri','peri peri'],sardinhas:['sardines','sardine','sardinhas'],cataplana:['cataplana']};
+const normalize=t=>t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^\p{L}\s]/gu,' ').replace(/\s+/g,' ').trim();
+const voicePhrases=items.flatMap(i=>[...i.name.split(' · '),i.id,...(voiceExtra[i.id]||[])].map(p=>[normalize(p),i])).filter(([p])=>p).sort((a,b)=>b[0].length-a[0].length);
+const findSpoken=text=>{const t=' '+normalize(text)+' ';return voicePhrases.find(([p])=>t.includes(' '+p+' '))?.[1]};
+const listenButtons=[...document.querySelectorAll('[data-listen]')];
+listenButtons.forEach(button=>button.addEventListener('click',()=>{
+ const Speech=window.SpeechRecognition||window.webkitSpeechRecognition;
+ if(!Speech){setStatus('Voice is unavailable in this browser. Click an item instead.');return}
+ const speech=new Speech();speech.lang='en-CA';speech.interimResults=false;speech.maxAlternatives=5;
+ listening=true;listenButtons.forEach(b=>{b.disabled=true});setStatus('Listening. Say any item, like “kimchi,” “salt cod” or “wild rice.”');
+ speech.onresult=e=>{
+  const heard=Array.from(e.results[0],r=>r.transcript);
+  const match=heard.map(findSpoken).find(Boolean);
+  if(!match){setStatus(`Heard “${heard[0]||''}”. No matching item. Try a name shown on the belt.`);return}
+  selectBelt(beltItems.indexOf(match));addFromBelt(match);
+ };
+ speech.onerror=()=>setStatus('Voice input is unavailable. Click an item instead.');
+ speech.onend=()=>{listening=false;listenButtons.forEach(b=>{b.disabled=false});nextRotation=performance.now()+BELT_STEP};
+ try{speech.start()}catch{speech.onend();setStatus('Could not start the microphone. Click an item instead.')}
+}));
+
+// ---- Hand steering (opt-in). Hand position left/right picks a slot on the current page of the belt,
+// so overshooting is fixed by moving back; there is no momentum to undo. Holding at a frame edge turns one page.
+const STEER={
+ margin:.12,     // outer 12% of the frame each side = page-turn pads (tracking is weakest there anyway)
+ hysteresis:.3,  // must travel 30% of a slot past the boundary before switching (stops flicker)
+ dwell:200,      // ms the hand must settle in a new slot before it is selected (fast sweeps skip past)
+ pageDwell:700,  // ms to hold at an edge pad to turn one page; leave the pad before turning again
+ smooth:.35,     // per-frame smoothing of the hand position (0 = frozen, 1 = raw)
+ lockY:.5,       // hand above this height is reaching to add: hold the selection
+ afterAdd:800    // ms to hold the selection after an add, while the hand comes back down
+};
+let steerX=null,steerCandidate=null,steerSince=0,steerLockUntil=0,steerLost=false,edgeDir=0,edgeSince=0,pageArmed=true;
+function steerOverlay(){
+ const box=$('#camera-box');
+ box.querySelectorAll('.steer-zones,.steer-dot,.steer-hint,.steer-edge').forEach(e=>e.remove());
+ if(!steering)return;
+ box.insertAdjacentHTML('beforeend',`<div class="steer-zones" aria-hidden="true">${'<span></span>'.repeat(beltWindow().len)}</div><span class="steer-edge" data-dir="-1" aria-hidden="true">‹</span><span class="steer-edge" data-dir="1" aria-hidden="true">›</span><span class="steer-dot" hidden></span><span class="steer-hint" style="top:4px">Raise to add ↑</span><span class="steer-hint steer-page" style="top:calc(50% + 4px);left:14%"></span>`);
+ renderSteer();
+}
+function renderSteer(){
+ if(!steering)return;
+ const w=beltWindow(),zones=[...document.querySelectorAll('.steer-zones span')];
+ if(zones.length!==w.len){steerOverlay();return}
+ const cur=beltIndex-w.start;
+ zones.forEach((z,i)=>{z.classList.toggle('on',i===cur);z.classList.toggle('next',i===steerCandidate)});
+ document.querySelectorAll('.steer-edge').forEach(e=>e.classList.toggle('next',Number(e.dataset.dir)===edgeDir));
+ const page=document.querySelector('.steer-page');if(page)page.textContent=`Page ${Math.floor(w.start/w.v)+1} of ${Math.ceil(w.n/w.v)} · move ← → to choose`;
+ const dot=document.querySelector('.steer-dot');
+ if(dot){dot.hidden=steerX===null;if(steerX!==null)dot.style.left=(steerX*100).toFixed(1)+'%'}
+}
+function turnPage(dir){
+ const w=beltWindow(),pages=Math.ceil(w.n/w.v),page=(Math.floor(w.start/w.v)+dir+pages)%pages,start=page*w.v,len=Math.min(w.v,w.n-start);
+ selectBelt(start+Math.min(beltIndex-w.start,len-1));
+ cameraStatus.textContent=`Page ${page+1} of ${pages}. Move back toward the middle to choose.`;
+}
+function setSteering(on){
+ if(steering===on)return;
+ steering=on;steerX=null;steerCandidate=null;steerLost=false;edgeDir=0;pageArmed=true;
+ $('#steer-toggle').setAttribute('aria-pressed',String(on));
+ $('#steer-toggle').textContent=on?'Steer with hand · on':'Steer with hand · off';
+ $('#belt-label').textContent=on?'On the belt now · steering by hand':'On the belt now';
+ beltEl.classList.toggle('steering',on);
+ selectBelt(beltIndex);renderPause();steerOverlay();
+ if(cameraStream)cameraStatus.textContent=on?'Move your hand left or right below the line to choose. Hold at an edge to turn the page. Raise an open palm to add.':'Raise an open palm above the line to add.';
+}
+function steer(hand,now){
+ if(!steering)return;
+ if(!hand){
+  // Hand left the frame: keep whatever was selected so the shopper can come back to it.
+  if(steerX!==null&&!steerLost){steerLost=true;cameraStatus.textContent=`Hand out of view. Holding ${beltItems[beltIndex].name.split(' · ')[0]}.`}
+  steerX=null;steerCandidate=null;edgeDir=0;renderSteer();return;
+ }
+ if(steerLost){steerLost=false;cameraStatus.textContent='Move your hand left or right below the line to choose. Raise an open palm to add.'}
+ const raw=1-hand[9].x; // the preview is mirrored, so flip x to match what the shopper sees
+ steerX=steerX===null?raw:steerX+(raw-steerX)*STEER.smooth;
+ if(hand[9].y<STEER.lockY||handPending||now<steerLockUntil){steerCandidate=null;edgeDir=0;renderSteer();return}
+ const edge=steerX<STEER.margin?-1:steerX>1-STEER.margin?1:0;
+ if(edge){
+  steerCandidate=null;
+  if(pageArmed){if(edgeDir!==edge){edgeDir=edge;edgeSince=now}else if(now-edgeSince>=STEER.pageDwell){turnPage(edge);pageArmed=false;edgeDir=0}}
+  renderSteer();return;
+ }
+ edgeDir=0;pageArmed=true;
+ const w=beltWindow(),cur=beltIndex-w.start;
+ const pos=Math.min(w.len-.0001,Math.max(0,(steerX-STEER.margin)/(1-2*STEER.margin)*w.len));
+ const inCurrent=pos>cur-STEER.hysteresis&&pos<cur+1+STEER.hysteresis;
+ const zone=inCurrent?cur:Math.floor(pos);
+ if(zone===cur){steerCandidate=null;renderSteer();return}
+ if(steerCandidate!==zone){steerCandidate=zone;steerSince=now;renderSteer();return}
+ if(now-steerSince>=STEER.dwell){steerCandidate=null;selectBelt(w.start+zone)}
+}
+$('#steer-toggle').addEventListener('click',()=>setSteering(!steering));
+function stopCamera(message){
+ cameraStream?.getTracks().forEach(t=>t.stop());cameraStream=undefined;webcam.srcObject=null;webcam.hidden=true;
+ $('#camera-placeholder').hidden=false;$('#camera-box').classList.remove('ready');cameraButton.textContent='Enable camera';setSteering(false);$('#steer-toggle').disabled=true;cameraStatus.textContent=message;handPending=false;
+}
+function trackHand(stream){
+ let previousFrame=-1,since=null,releaseSince=null,armed=true;
+ function frame(now){
+  if(cameraStream!==stream)return;
+  if(webcam.readyState>=2&&webcam.currentTime!==previousFrame){
+   previousFrame=webcam.currentTime;let result;
+   try{result=recognizer.recognizeForVideo(webcam,now)}catch{stopCamera('Hand tracking stopped. Use Add to continue.');return}
+   const palm=result.gestures[0]?.[0],hand=result.landmarks[0];steer(hand,now);
+   const raised=palm?.categoryName==='Open_Palm'&&palm.score>.6&&hand?.[9]?.y<.42,lowered=!hand||hand[9]?.y>.55;
+   if(raised&&armed){handPending=true;since??=now;if(now-since>260){armed=false;handPending=false;if(!listening)addFromBelt();steerLockUntil=now+STEER.afterAdd;cameraStatus.textContent='Lower your hand to add again.'}}
+   else if(!raised){since=null;handPending=false}
+   if(!armed&&lowered){releaseSince??=now;if(now-releaseSince>250){armed=true;cameraStatus.textContent='Raise an open palm above the line.'}}else releaseSince=null;
+  }
+  requestAnimationFrame(frame);
+ }
+ requestAnimationFrame(frame);
+}
+cameraButton.addEventListener('click',async()=>{
+ if(cameraStream){stopCamera('Camera off. Use Add or enable the camera again.');return}
+ cameraButton.disabled=true;cameraStatus.textContent='Loading hand tracking…';
+ try{
+  const root='https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.21';
+  if(!recognizer){const{FilesetResolver,GestureRecognizer}=await import(root+'/vision_bundle.mjs');const vision=await FilesetResolver.forVisionTasks(root+'/wasm');recognizer=await GestureRecognizer.createFromOptions(vision,{baseOptions:{modelAssetPath:'https://storage.googleapis.com/mediapipe-models/gesture_recognizer/gesture_recognizer/float16/1/gesture_recognizer.task'},runningMode:'VIDEO',numHands:1})}
+  cameraStream=await navigator.mediaDevices.getUserMedia({video:{width:640,height:480,aspectRatio:4/3},audio:false});
+  webcam.srcObject=cameraStream;await webcam.play();webcam.hidden=false;$('#camera-placeholder').hidden=true;$('#camera-box').classList.add('ready');
+  cameraButton.textContent='Turn camera off';$('#steer-toggle').disabled=false;cameraStatus.textContent='Raise an open palm above the line.';trackHand(cameraStream);
+ }catch{stopCamera('Camera or hand tracking unavailable. Check the connection and camera permission, or use Add.')}
+ finally{cameraButton.disabled=false}
+});
+selectBelt(0);renderPause();renderCart();
+</script></body></html>
